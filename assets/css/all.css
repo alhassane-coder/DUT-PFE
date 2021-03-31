@@ -1,0 +1,203 @@
+/************
+      NAV
+      CODE  CSS
+
+   ************/
+   body { background: rgba(2, 12, 38,0.4) !important;}
+  
+   .container { margin-top: 5px !important;}
+   
+   .main-content { margin-top: 80px !important;}
+   
+   .well {
+        background:linear-gradient(45deg,  rgba(102, 62, 16, 0.5), rgba(0, 0, 0, 0.7)) !important; 
+        color: white  !important;
+    }
+   
+   .wells { 
+       color: white !important;
+       background-color: rgba(0, 0, 0, 0.4) !important;
+       border-color: #337ab7 !important;
+       border: 1px solid !important;
+       border-radius:0px!important;
+       margin-bottom: 100px;
+    }
+    .lead{ margin-top: 50px !important;}
+    .panel-title { 
+        margin-top: 50px !important;
+        padding: 0%; 
+        height: auto;
+        width: auto;
+    }
+   
+   .bg-image { 
+     filter: blur(8px);
+    -webkit-filter: blur(5px);
+    margin-top: 1px;
+   }
+   .jumbotron{
+        margin-left: 3.5px !important;
+        margin-right: 3.5px !important; 
+        border-radius: 12px !important;
+        padding: 5px;
+    }
+   
+    .bg-text {
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.7); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    border: 0.5px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    height: 30%;
+    padding: 20px 5px 50px 5px;
+    text-align: center;
+    opacity: 0.7;
+   }
+   .bg-pub{
+       font-size: 1.3em;
+       font-weight: bold;
+   }
+   /*********************
+    MEDIA QUERY BEGIN 
+    ******************/
+   
+   @media screen and (max-width: 700px) {
+    
+    .bg-image { 
+        filter: blur(8px);
+       -webkit-filter: blur(3px);
+      }
+
+    .bg-text {
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0, 0.8); /* Black w/opacity/see-through */
+        color: white;
+        font-weight: bold;
+        border: 0.5px solid #f1f1f1;
+        position: absolute;
+        top: 26.5%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        width: 81%;
+        height: 32%;
+        padding: 5px 5px 50px 5px;
+        margin:5px 5px 5px ;
+        text-align: center;
+        opacity: 0.7;
+       }
+
+       .bg-pub{
+        visibility: hidden;
+        opacity: 0;
+    }
+    .well { 
+        background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(102, 62, 16, 0.5)); 
+        font-size: 1.7em;
+        color: white !important;
+    
+    }
+
+
+
+   }
+   .well { background-color: rgba(0,100,100,0,5) !important;}
+             /* navbar */
+     .navbar-default {
+         background-color: rgb(0, 174, 255) !important;
+         border-color: #E7E7E7;
+     }
+     /* Title */
+     .navbar-default .navbar-brand {
+         color: black !important;
+          background: white !important;
+     }
+     .navbar-default .navbar-brand:hover,
+     .navbar-default .navbar-brand:focus {
+         color:white !important;
+         background: blue !important;
+     }
+     /* Link */
+     .navbar-default .navbar-nav > li > a {
+         color: black !important;
+     }
+     .navbar-default .navbar-nav > li > a:hover,
+     .navbar-default .navbar-nav > li > a:focus {
+         color: black !important;
+         background: white !important;
+     }
+     .well.bio{color: white !important;
+       background-color: #337ab7 !important;border-color: #337ab7 !important;border-radius:0px!important;}
+
+
+ /************
+   END NAV
+   CODE  CSS
+
+/***************
+BODY CSS
+*****************/
+h4{
+    font-size: 1.5em;
+    text-align: center;
+}
+img{
+    width: 100%;
+    height: auto;
+}
+
+.Modal-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.9s; 
+}
+.bg-active {
+    visibility: visible;
+    opacity: 1;
+}
+.bg-desactive {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.modal-close{
+    font-size: 25px;
+    font-weight: bold;
+    color: #cf6000;
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    cursor: pointer;
+
+}
+
+.Modal {
+     position: relative;
+     background-color: white;
+     opacity: 95%;
+     width: 40%;
+     height: 44%;
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     flex-direction: column;
+     margin-top: 10px;
+     border: 2px solid #337ab7;
+     border-radius: 1pc;
+    
+}

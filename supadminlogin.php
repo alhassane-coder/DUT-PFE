@@ -1,0 +1,1 @@
+<?php include 'view/supadminlogin.view.php';

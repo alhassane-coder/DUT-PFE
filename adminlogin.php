@@ -1,0 +1,1 @@
+<?php include 'view/adminlogin.view.php';
