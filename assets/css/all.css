@@ -68,6 +68,21 @@
     ******************/
    
    @media screen and (max-width: 700px) {
+ 
+    .Modal {
+        position: relative;
+        background-color: white;
+        opacity: 80%;
+        width: 70% !important;
+        height: 50% !important;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 10px;
+        border: 2px solid #337ab7;
+   
+   }
     
     .bg-image { 
         filter: blur(8px);
@@ -104,11 +119,13 @@
     
     }
 
+}
 
+   /** Media query END*****/
 
-   }
    .well { background-color: rgba(0,100,100,0,5) !important;}
-             /* navbar */
+            
+   /* navbar */
      .navbar-default {
          background-color: rgb(0, 174, 255) !important;
          border-color: #E7E7E7;
@@ -178,9 +195,9 @@ img{
 .modal-close{
     font-size: 25px;
     font-weight: bold;
-    color: #cf6000;
+    color: #337ab7;
     position: absolute;
-    top: 10px;
+    top: 6px;
     right: 5px;
     cursor: pointer;
 
@@ -198,6 +215,5 @@ img{
      flex-direction: column;
      margin-top: 10px;
      border: 2px solid #337ab7;
-     border-radius: 1pc;
-    
+
 }
