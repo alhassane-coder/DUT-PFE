@@ -23,6 +23,8 @@
     <!-- STYLESHEET-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="assets/css/all.css">
+  <link rel="stylesheet" type="text/css" href="librairies/alertify/css/alertify.css">
+
 
 <!-- Font awesome -->
 <script src="https://kit.fontawesome.com/c1cf6b23f8.js" crossorigin="anonymous"></script>
@@ -30,3 +32,5 @@
 </head>
 
  <?php include('partials/_nav.php');?>
+ <?php include('partials/_flash.php'); ?>
+
