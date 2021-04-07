@@ -4,7 +4,7 @@
 Parsley.addMessages('fr', {
   defaultMessage: "Cette valeur semble non valide.",
   type: {
-    email:        " Adresse email invalide.",
+    email:        "Adresse email invalide.",
     url:          "URL valide.",
     number:       "Cette valeur doit être un nombre.",
     integer:      "Cette valeur doit être un entier.",
@@ -12,7 +12,7 @@ Parsley.addMessages('fr', {
     alphanum:     "Cette valeur doit être alphanumérique."
   },
   notblank:       "Cette valeur ne peut pas être vide.",
-  required:       "Ce champ est requis.",
+  required:       "Ce champ est obligatoire.",
   pattern:        "Cette valeur semble non valide.",
   min:            "Cette valeur ne doit pas être inférieure à %s.",
   max:            "Cette valeur ne doit pas excéder %s.",

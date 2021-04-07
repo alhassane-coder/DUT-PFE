@@ -94,7 +94,7 @@
             <div class="header-icons">
                 <input type="search" placeholder="Rechercher">
                 <span><i class="fas fa-search"></i></span>
-                <span><i class="fas fa-sign-out-alt"></i></span>
+                <span style="color: rgb(0, 174, 255); font-size: 0.9rem;text-decoration:none;" ><a style="color: rgb(0, 174, 255); font-size: 0.9rem;text-decoration:none;"href="../logout.php"><i class="fas fa-sign-out-alt"></i>Se Deconnecter</a></span>
             </div>     
         </header>
         <main>

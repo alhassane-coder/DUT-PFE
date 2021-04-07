@@ -142,3 +142,25 @@ if(!function_exists('not_empty'))
 	    }
 
   }
+
+  // Verifie si le username et l'email sont pas déja dans notre base de donnée
+
+if(!function_exists('is_already_in_use')){
+
+	function is_already_in_use($field, $value, $table){
+
+		  global $db;
+
+		  $q = $db->prepare("SELECT id FROM $table WHERE $field = ?");
+
+		  $q->execute([$value]);
+
+		  $count = $q->rowCount();
+
+		  $q->closeCursor();
+
+		  return $count;
+
+	}
+
+}

@@ -15,15 +15,6 @@ body{
     display: none;
 }
 
-.body-label {
-    position: fixed;
-    height: 100%;
-    width: calc(100% - 200px);
-    z-index: 30;
-    right: -100px;
-    top: 0;
-
-}
 
 #sidebar-toggle:checked ~ .sidebar {
     left: -100%;
@@ -46,10 +37,14 @@ body{
     top: 0;
     height: 100%;
     padding: 1rem 1.5rem;
-    background: rgb(8, 48, 65);
+    background: rgb(0, 174, 255)!important ;
     color: #fff;
     z-index: 20;
-    transition: left 300ms;
+    transition: left 3s;
+    transition: right 3s;
+
+
+
 
 }
 
@@ -96,7 +91,7 @@ body{
 
 .menu-head{
     text-transform: uppercase;
-    color: #8da2fb;
+    color: #000000ad;
     font-size: .75rem;
     font-weight: 600;
     margin-top: .8rem;
@@ -117,6 +112,10 @@ body{
     display: flex;
     align-items: center;
 }
+.sidebar-menu li a:hover{
+    color: #efefef;
+    background: rgb(0, 47, 68) !important;
+}
 
 .sidebar-menu li a span{
     font-size: 1.5rem;
@@ -136,7 +135,7 @@ header {
     width: calc(100% - 200px);
     top: 0;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
-    transition: left 300ms;
+    transition: left 300ms r;
     z-index: 20;
     background: #fff;
 
@@ -157,6 +156,14 @@ header {
     font-size: 1.4rem;
 
 }
+
+.header-icons span a:hover{
+    color: rgba(19, 9, 9, 0.726)!important;
+    background: rgb(255, 0, 0)!important;
+    padding: 4px;
+}
+
+
 
 .menu-toogle label:hover {
  background: #efefef;
@@ -183,7 +190,7 @@ main{
 
 .header-actions button{
     outline: none;
-    background: #5850ec;
+    background: rgb(0, 174, 255);
     color: white;
     border: 3px solid #ccc;
     padding: .5rem 1rem;
@@ -198,7 +205,7 @@ main{
 }
 
 
-@media only screen and (max-width: 1124px) {
+@media only screen and (max-width: 700px) {
     .sidebar{
         left: -100%;
         z-index: 30;
@@ -218,6 +225,12 @@ main{
     }
 
     #sidebar-toggle:checked ~ .body-label {
-        right: 0;
+        position: fixed;
+        height: 100%;
+        width: calc(100% - 100px);
+        z-index: 30;
+        right: -100px;
+        top: 150px;
+       
     }
 }

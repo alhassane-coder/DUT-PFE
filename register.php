@@ -40,15 +40,14 @@ if(isset($_POST['register']))
                 }
 	         }
 
-            /* if(is_already_in_use('login',$login,'fournisseur'))
+             if(is_already_in_use('login',$login,'fournisseurs'))
              {
-             	$errors[]='<i class="fas fa-exclamation-triangle"></i> Nom d'utilisateur déja utilisé';
+             	$errors[]='<i class="fas fa-exclamation-triangle"></i> Nom d\'utilisateur déja utilisé';
              }
              if(is_already_in_use('email',$email,'fournisseurs'))
              {
              	$errors[]='<i class="fas fa-exclamation-triangle"></i> Addresse E-mail  déja utilisé';
              }
-             */
 
              if(count($errors) == 0){
 
@@ -56,7 +55,7 @@ if(isset($_POST['register']))
 
                //Envoi d'un mail d'activation
 
-                $from='alhassane@alhass.ddns.net';
+              $from='alhassane@alhass.ddns.net';
 
              	$to = $email;
 
@@ -88,18 +87,20 @@ if(isset($_POST['register']))
 
                       //On enregistre l'utilisateur et on le  redirige vers la page d'accueil et l'alerter pour qu'il verifie sa boite mail
 
-                	/*  $q=$db->prepare('INSERT INTO fournisseur (login,name,email,password) VALUES(:login,:name,:email,:password)');
+                  $q=$db->prepare('INSERT INTO fournisseurs (login,name,email,password) VALUES(:login,:name,:email,:password)');
 
-                	  $q->execute(array(
+                	  $success=$q->execute(array(
                             'login'=>$login,
                             'name'=>$name,
                             'email'=>$email,
-                            'password'=>$password
+                            'password'=>$password            
 
-                	  ));*/
+                	  ));
+                    if($success){
+                      $_SESSION['email_sent']='success';
+                      redirect('index.php');
 
-                       $_SESSION['email_sent']='success';
-	                   redirect('index.php');
+                    }              
 
                 }else {
 
@@ -108,7 +109,7 @@ if(isset($_POST['register']))
                         $id = $db->lastInsertId();
                         $q->execute([$id]);
 
-                	set_flash("<i class=\"fas fa-exclamation-triangle\"> Echec lors de l'envoi de l'email",'info');
+                	set_flash("<i class=\"fas fa-exclamation-triangle\"> Echec lors de l'envoi de l'email ressayer!",'info');
                 }
 
              }else{
