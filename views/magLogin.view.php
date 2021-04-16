@@ -1,5 +1,5 @@
 
- <?php $title='Connection du directeur';?>
+ <?php $title='Connection du magasinier';?>
 
 <?php include('partials/_header.php');?>
  <body>
@@ -9,21 +9,19 @@
 
        <div  class="border border-primary">
 
-          <h1 id="login-lead" class="lead text-center">Connectez-Vous Mr le DG</h1>
-          <?php include('partials/_flash.php');?>
-
+          <h1 id="login-lead" class="lead text-center">Connectez-Vous Magasinier</h1>
 
        </div>
 
-          <form data-parsley-validate method="POST" class="wells col-md-6 col-md-offset-3 " >
+          <form  data-parsley-validate method="POST" class="wells col-md-6 col-md-offset-3 " >
           <?php include('partials/_errors.php'); ?>
           <?php include('include/scripts.php');?>
 
            <!-- Pseudo or Email-Field -->
 
             <div class="form-group">
-                   <label class="control-label" for="pseudo">Nom d'utilisateur ou Addresse Email:</label>
-                   <input type="text" class="form-control" id="pseudo" name="credentials" required="required"  value="<?= get_input('pseudo') ?>" data-parsley-minlength="3" data-parsley-trigger="change">
+                   <label class="control-label" for="login">Nom d'utilisateur ou Addresse Email:</label>
+                   <input type="text" class="form-control" id="login" name="credentials" required="required" >
 
           </div>
 
@@ -36,15 +34,6 @@
 
              </div>
 
-         <!-- Remember me Field -->
-
-         <div class="form-group">
-           <label class="control-label" for="session_active">
-                <input type="checkbox" id="session_active"  name="remember_me"/>
-                Garder ma session active
-           </label>
-         </div>
-
            <input type="submit" class="btn btn-primary" value="Connection" name="login">
            <p>
              <h5 class="text-center">Vous avez oublié votre mot passe ?
@@ -56,7 +45,6 @@
 
      </div><!-- /.container -->
 	  
-      
      <!-- Connexion Modal -->
      <div class="Modal-bg">
 	  	 <div class="Modal">
@@ -69,8 +57,8 @@
 		</div>	  
 	  </div>
     <script src="assets/js/app.js"></script>
-   </div>     <!-- END Connexion Modal -->
-  
+   </div>
+     <!-- END Connexion Modal -->
   </body>
 
    <?php include('partials/_footer.php');?>

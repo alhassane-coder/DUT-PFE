@@ -64,7 +64,7 @@ if(isset($_POST['register']))
              	$password=password_hash($password , PASSWORD_BCRYPT);
 
 
-                $token = sha1($login.$email.$password);
+                $token = sha1($login.$email);
 
               // On inclut la page activate.tmpl.php sans l'afficher grace à ob_start
 

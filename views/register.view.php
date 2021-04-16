@@ -20,7 +20,7 @@
                <!--Username Field -->
                        	 
                <div class="form-group">
-              		<label class="control-label" for="name">Nom d'utilisateur</label>
+              		<label class="control-label" for="name">Nom d'utilisateur:</label>
               		<input type="text" class="form-control" id="name" name="login" value="<?= get_input('login') ?>"n required="required">
               	</div>
 
@@ -42,7 +42,7 @@
           <!--Password Field -->
                        	 
              <div class="form-group">
-              	 <label class="control-label" for="password">Mot de passe :</label>
+              	 <label class="control-label" for="password">Mot de passe:</label>
     		    <input type="password" class="form-control" id="password"  name="password" required="required"  data-parsley-minlength="6" data-parsley-trigger="keypres">
           				    
             </div>
@@ -66,7 +66,7 @@
      </div><!-- /.container -->
 	  
      <!-- Connexion Modal -->
-     <div class="Modal-bg">
+    <div class="Modal-bg">
 	  	 <div class="Modal">
 			  <h4 class="lead">En tant que: </h4>
 			  <a href="adminLogin.php" class="btn btn-primary ">Administrateur</a>

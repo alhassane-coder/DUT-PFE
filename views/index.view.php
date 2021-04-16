@@ -1,13 +1,15 @@
 <?php $title = "Accueil" ;?>
- <?php include('partials/_header.php');?>
+<?php include('partials/_header.php');?>
 <body>
 <div id="main-content">
 	<div class="bg-image">
 		<img src="assets/img/bg-image1.jpg" alt="">
 	</div>
+	<?php include('partials/_flash.php'); ?>
+	
 	<div class="bg-text">
   			<h1>Gérer le stock de votre entreprise</h1>
-			<p class="bg-pub" >Le moins le plus simple pour la gestion d'un stock giganstesque!<br>
+			<p class="bg-pub" >Le moyen le plus simple pour la gestion d'un stock giganstesque!<br>
 				<span style="font-size: 0.8em; font-weight: normal ;"> Simple, rapide et efficace ☺ .</span>
 			</p>			  
 	</div>
@@ -15,7 +17,7 @@
                 <h1 class="fs-6 well text-center" >Simple et Rapide ☺!</h1>
 				<p>Bienvenue sur cette application Web de gestioon de stock :).<br>
             	 Et qui dit stock ,dit également entreprise.
-            	 Grace à cette plateforme , votre entreprise sera plus structurée et plus productive car vous aurez la possibilité de gérer avec une grande simplicité une grande stock,
+            	 Grace à cette plateforme , votre entreprise sera plus structurée et plus productive car vous aurez la possibilité de gérer avec une grande simplicité un grand stock,
 				 suivre facilement vos produits, rester en contact avec vos fournisseurs , imprimer les détails des produits et beaucoup d'autres fonctionnalités.
 			     Il permet également au directeur de l'entreprise d'ajouter, bloquer et supprimer des informaticiens qui utiliseront l'apllication et de superviser les travaux de ce dernier grace 
 				 à un historique d'utilisation.Et permettra aussi à l'informaticien
@@ -49,7 +51,7 @@
  <?php include('partials/_footer.php');?>
 
 
-  <!-- Message de succès après connection -->
+  <!-- Message de l'envoi du mail après connection -->
 
   <?php if(!empty($_SESSION['email_sent'])):?>
     <script type="text/javascript">
@@ -57,6 +59,15 @@
     </script>
   <?php endif;?>
   <?php $_SESSION['email_sent']='';?>
+
+   <!-- Message d'echec après activation du fournisseur -->
+
+   <?php if(!empty($_SESSION['invalid_token'])):?>
+    <script type="text/javascript">
+         alertify.error('<i class="fas fa-exclamation-circle"></i> Token de vérification invalide ! .');
+    </script>
+  <?php endif;?>
+  <?php $_SESSION['invalid_token']='';?>
 
 
 

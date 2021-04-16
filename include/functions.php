@@ -164,3 +164,84 @@ if(!function_exists('is_already_in_use')){
 	}
 
 }
+
+if(!function_exists('ceil_count')){
+
+	function ceil_count($table,$field,$value){
+   
+		global $db;
+   
+		$q = $db->prepare("SELECT * FROM $table WHERE $field = ?");
+   
+		$q->execute([$value]);
+   
+		return $q->rowCount();
+	}
+   
+   }
+
+   // Rechercher toutes les données du directeur avec son id;
+
+if(!function_exists('find_admin_by_id')){
+
+	function find_admin_by_id($id=1){
+
+		global $db;
+
+		$q=$db->prepare("SELECT name,firstName,email,tel FROM super_administrateur WHERE id_admin=? ");
+
+		$q->execute([$id]);
+
+        $data =$q->fetch(PDO::FETCH_OBJ);
+
+        $q->closeCursor();
+
+        return $data;
+
+    }
+
+ }
+
+  // Rechercher toutes les données du fournisseur avec son id;
+
+if(!function_exists('find_fourniss_by_id')){
+
+	function find_fourniss_by_id($id){
+
+		global $db;
+
+		$q=$db->prepare("SELECT name,email,tel FROM fournisseurs WHERE id=? ");
+
+		$q->execute([$id]);
+
+        $data =$q->fetch(PDO::FETCH_OBJ);
+
+        $q->closeCursor();
+
+        return $data;
+
+    }
+
+ }
+
+   // Rechercher toutes les données de l'informaticien avec son id;
+
+if(!function_exists('find_infos_by_id')){
+
+	function find_infos_by_id($id){
+
+		global $db;
+
+		$q=$db->prepare("SELECT name,firstName,email,tel FROM informaticien WHERE id=? ");
+
+		$q->execute([$id]);
+
+        $data =$q->fetch(PDO::FETCH_OBJ);
+
+        $q->closeCursor();
+
+        return $data;
+
+    }
+
+ }

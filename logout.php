@@ -5,7 +5,7 @@ $_SESSION=[];
 
 //Redirection
 
-header('Location: supadminLogin.php');
+header('Location: index.php');
 
 exit;
 

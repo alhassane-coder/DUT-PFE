@@ -1,5 +1,5 @@
 
- <?php $title='Connection';?>
+ <?php $title='Connection de l\'informaticien';?>
 
 <?php include('partials/_header.php');?>
  <body>
@@ -10,15 +10,19 @@
        <div  class="border border-primary">
 
           <h1 id="login-lead" class="lead text-center">Connectez-Vous Admin</h1>
+          <?php include('partials/_flash.php');?>
+
 
        </div>
 
-          <form  method="POST" class="wells col-md-6 col-md-offset-3 " >
+          <form  data-parsley-validate method="POST" class="wells col-md-6 col-md-offset-3 " >
+          <?php include('partials/_errors.php'); ?>
+          <?php include('include/scripts.php');?>
 
            <!-- Pseudo or Email-Field -->
 
             <div class="form-group">
-                   <label class="control-label" for="login">Pseudo ou Addresse Email:</label>
+                   <label class="control-label" for="login">Nom d'utilisateur ou Addresse Email:</label>
                    <input type="text" class="form-control" id="login" name="credentials" required="required" >
 
           </div>
@@ -28,18 +32,9 @@
 
             <div class="form-group">
                    <label class="control-label" for="password">Mot de passe:</label>
-                   <input type="password" class="form-control" id="password"  name="password" required="required" >
+                   <input type="password" class="form-control" id="password"  name="password" required="required" data-parsley-minlength="6" data-parsley-trigger="keypres" >
 
              </div>
-
-         <!-- Remember me Field -->
-
-         <div class="form-group">
-           <label class="control-label" for="session_active">
-                <input type="checkbox" id="session_active"  name="remember_me"/>
-                Garder ma session active
-           </label>
-         </div>
 
            <input type="submit" class="btn btn-primary" value="Connection" name="login">
            <p>

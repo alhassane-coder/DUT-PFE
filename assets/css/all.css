@@ -3,6 +3,23 @@
       CODE  CSS
 
    ************/
+   .alert.danger {
+       background-color: #c52b13 !important;
+       color: white !important;
+       margin-top: 10px !important;
+       border-color:white !important; 
+    }
+   .alert.info {
+       background-color: rgb(0, 65, 156);
+       color: white ;margin-top: 10px;
+       border-color:white;
+     }
+   .alert.warning {background-color: rgb(181, 124, 11);
+    color: black;
+    border-color:black;
+    margin-top: 10px; 
+}
+
    body { background: rgba(2, 12, 38,0.4) !important;}
   
    .container { margin-top: 5px !important;}
@@ -175,7 +192,7 @@ img{
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.9) !important;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -206,7 +223,7 @@ img{
 .Modal {
      position: relative;
      background-color: white;
-     opacity: 95%;
+     opacity: 75% !important;
      width: 40%;
      height: 44%;
      display: flex;
@@ -218,7 +235,80 @@ img{
 
 }
 
+.infos_back{
+    margin-top: 5px;
+    border: 1px solid black !important;
+    padding: 20px;
+    background: rgba(83, 141, 207,0.2);
+}
+.infos{ 
+    color: black !important;
+    background: rgba(83, 141, 207,0.2);
+    border: 1px solid black !important;
+    margin-bottom: 100px;
+    margin-top: 5px;
+    padding: 20px;
+    position: relative;
 
+
+ }
+ .submit-btn{
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    background: rgb(0, 174, 255)!important;
+    color: white;
+    cursor: pointer;
+    border: .5px solid white;
+    box-shadow: 1px 1px 5px white;
+}
+
+.submit-btn1{
+    width: 100px;
+    height: 40px;
+    background: rgb(255, 30, 0)!important;
+    color: white;
+    cursor: pointer;
+    border: .5px solid white;
+    padding: 2px;
+
+}
+
+.submit-btn2{
+    width: 100px;
+    height: 40px;
+    background: rgba(255, 145, 0, 0.815)!important;
+    color: white;
+    cursor: pointer;
+    border: .5px solid white;
+    padding: 2px;
+
+}
+.submit-btn3{
+    width: 100px;
+    height: 40px;
+    background: rgba(0, 190, 16, 0.815)!important;
+    color: white;
+    cursor: pointer;
+    border: .5px solid white;
+    padding: 2px;
+}
+
+.submit-btn:hover {
+    background: blue !important;
+}
+
+.submit-btn1:hover{
+    background: rgb(126, 17, 0) !important;
+}
+.submit-btn2:hover{
+    background: rgb(155, 75, 0)!important
+}
+.submit-btn3:hover {
+    background: rgb(5, 58, 3) !important;
+}
 
 
 		/************
@@ -269,3 +359,97 @@ img{
               PARSLEY CSS
         
              ************/
+
+
+
+.tb-add
+{
+ border-radius:3px;
+ box-shadow:0px 0px 10px 0px;
+ padding:10px;
+ background-color:#80b3ff80;
+ margin-bottom: 20px;
+ margin :auto;
+ margin-top: 20px;
+
+}
+
+
+.tb-add td
+{
+ font-size:20px;
+ color: black;
+}
+.tb-add th
+{
+ visibility:hidden;
+ display:none;
+}
+td input[type="text"],td input[type="email"],td input[type="password"],td input[type="tel"]
+{
+ width:200px;
+ height:35px;
+ border:1px solid silver;
+ border-radius:3px;
+ font-size:17px;
+ padding:5px;
+}
+
+
+
+@media only screen and (min-width:180px) and (max-width:409px)
+{
+.tb-add
+{
+ width:100%;
+}
+.tb-add .column1
+{
+ visibility:visible !important;
+ display:none;
+}
+
+.submit-btn
+{
+position: unset;
+margin-top: 20px;
+}
+
+}
+@media only screen and (max-width:920px){
+    .submit-btn
+    {
+    position: unset;
+    margin-top: 20px;
+    }
+
+
+}
+
+.listinfotable{
+    margin-top: 20px;
+}
+
+.listinfotable table{
+    margin: auto;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.listinfotable td, .listinfotable th /* Toutes les cellules des tableaux... */
+{
+    border: .5px solid black; /* auront une bordure de 1px */
+    padding: 5px;
+    text-align: center !important;
+}
+.listinfotable th{
+    background: rgb(0, 174, 255)!important ;
+    color: white;
+    padding: 5px;
+    
+}
+
+h8 {
+    text-align:center !important;
+    color:red;
+}

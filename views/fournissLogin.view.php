@@ -1,25 +1,28 @@
 
- <?php $title='Connection';?>
+ <?php $title='Connection du fournisseur';?>
 
 <?php include('partials/_header.php');?>
+
  <body>
    <div id="main-content">
 
      <div class="container">
 
        <div  class="border border-primary">
-
           <h1 id="login-lead" class="lead text-center">Connexion du fournisseur:</h1>
+          <?php include('partials/_flash.php'); ?>
 
        </div>
 
           <form  method="POST" class="wells col-md-6 col-md-offset-3 " >
+          <?php include('partials/_errors.php'); ?>
+          <?php include('include/scripts.php');?>
 
            <!-- Pseudo or Email-Field -->
 
             <div class="form-group">
-                   <label class="control-label" for="pseudo">Pseudo ou Addresse Email:</label>
-                   <input type="text" class="form-control" id="pseudo" name="credentials" required="required" >
+                   <label class="control-label" for="username">Nom d'utilisateur ou Addresse Email:</label>
+                   <input type="text" class="form-control" id="username" name="credentials" required="required" >
 
           </div>
 
@@ -31,15 +34,6 @@
                    <input type="password" class="form-control" id="password"  name="password" required="required" >
 
              </div>
-
-         <!-- Remember me Field -->
-
-         <div class="form-group">
-           <label class="control-label" for="session_active">
-                <input type="checkbox" id="session_active"  name="remember_me"/>
-                Garder ma session active
-           </label>
-         </div>
 
            <input type="submit" class="btn btn-primary" value="Connection" name="login">
            <p>

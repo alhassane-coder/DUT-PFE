@@ -1,6 +1,6 @@
 <?php
 if(isset($errors) && count($errors) != 0){ 
-   echo '<div class="alert alert-danger" style="margin-top: 10px;">
+   echo '<div class="alert alert-danger" style="margin-top: 10px ; color: red;">
 		   <span class="closebtn">&times;</span>';
 		   
 		    if(count($errors)== 1){

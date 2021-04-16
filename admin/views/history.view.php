@@ -10,14 +10,12 @@
     <link rel="stylesheet" type="text/css" href="../librairies/alertify/css/alertify.css">
 
 
-
-
-    <title>Admin dashboard</title>
+    <title>Historique d'utilisation</title>
 </head>
 <body>
     <input type="checkbox" name="" id="sidebar-toggle">
-    <!-- Sidebar -->
     
+    <!-- Sidebar -->
     <?php require("sidebar.php"); ?>
     
     <div class="main-content">
@@ -28,8 +26,6 @@
                 </label>
             </div>
             <div class="header-icons">
-               <!-- <input type="search" placeholder="Rechercher">
-                <span><i class="fas fa-search"></i></span> -->
                 <span><a style="color: red; font-size: 0.9rem;text-decoration:none;"href="../logout.php"><i class="fas fa-sign-out-alt"></i>Se Deconnecter</a></span>
             </div>     
         </header>
@@ -37,55 +33,28 @@
             <div class="page-header">
                 <div>
                     <h1> Profil du directeur </h1>
-                    <small> Gestionnaire de l'application web</small>
-
+                    <small> Historique d'utilisation </small>
                 </div>
                 <div class="header-actions">
-                     <a class="buton" href="">
+                    <a class="buton" href="">
                      <span><i class="fas fa-edit"></i></span>
                       Modifier mon profil
                     </a>
-                  
                 </div>         
             </div>
-            <div class="infos_back">
-                <div class="form-content">
-                    <h5>Nom: <span style="font-size:1em; color:blue"><?= $admin_infos->name ?></span></h5><br>
-                    <h5>Prenom:  <span style="font-size:1em; color:blue"><?= $admin_infos->firstName ?></span></h5><br>
-                    <h5>Email:  <span style="font-size:1em; color:blue"><?= $admin_infos->email?></span></h5><br>
-                    <h5>Numéro de Téléphone:  <span style="font-size:1.5em; color:blue"><?= $admin_infos->tel ?></span></h5><br>
-                </div>              
-            </div>
-                    
+                
         </main>
     </div>
 <label for="sidebar-toggle" class="body-label"></label>
 
 </body>
 
- <!-- SCRIPTS-->
+<!-- SCRIPTS-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="../librairies/Parsley/parsley.min.js"></script>
 <script src="../librairies/Parsley/i18n/fr.js"></script>
 <script src="../librairies/alertify/alertify.min.js"></script>
-
-
-<!-- Message de succès après connection -->
- <?php if(!empty($_SESSION['connected'])):?>
-    <script type="text/javascript">
-         alertify.success('Bienvenue Mr <?= $_SESSION['admin_name'] ?> ☺.');
-    </script>
-  <?php endif;?>
-  <?php $_SESSION['connected']='';?>
-
-  <!-- Message de succès après ajout d'utilisateur -->
- <?php if(!empty($_SESSION['informatician_added'])):?>
-    <script type="text/javascript">
-         alertify.success("<?= $_SESSION['informatician_added'] ?>");
-    </script>
-  <?php endif;?>
-  <?php $_SESSION['informatician_added']='';?>
 
 
   

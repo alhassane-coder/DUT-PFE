@@ -10,12 +10,11 @@
     <link rel="stylesheet" type="text/css" href="../librairies/alertify/css/alertify.css">
 
 
-
-
-    <title>Admin dashboard</title>
+    <title>Liste des fournisseurs</title>
 </head>
 <body>
     <input type="checkbox" name="" id="sidebar-toggle">
+   
     <!-- Sidebar -->
     
     <?php require("sidebar.php"); ?>
@@ -28,8 +27,6 @@
                 </label>
             </div>
             <div class="header-icons">
-               <!-- <input type="search" placeholder="Rechercher">
-                <span><i class="fas fa-search"></i></span> -->
                 <span><a style="color: red; font-size: 0.9rem;text-decoration:none;"href="../logout.php"><i class="fas fa-sign-out-alt"></i>Se Deconnecter</a></span>
             </div>     
         </header>
@@ -37,55 +34,77 @@
             <div class="page-header">
                 <div>
                     <h1> Profil du directeur </h1>
-                    <small> Gestionnaire de l'application web</small>
-
+                    <small> Liste des fournisseurs </small>
                 </div>
                 <div class="header-actions">
-                     <a class="buton" href="">
+                    <a class="buton" href="">
                      <span><i class="fas fa-edit"></i></span>
                       Modifier mon profil
                     </a>
-                  
                 </div>         
             </div>
-            <div class="infos_back">
-                <div class="form-content">
-                    <h5>Nom: <span style="font-size:1em; color:blue"><?= $admin_infos->name ?></span></h5><br>
-                    <h5>Prenom:  <span style="font-size:1em; color:blue"><?= $admin_infos->firstName ?></span></h5><br>
-                    <h5>Email:  <span style="font-size:1em; color:blue"><?= $admin_infos->email?></span></h5><br>
-                    <h5>Numéro de Téléphone:  <span style="font-size:1.5em; color:blue"><?= $admin_infos->tel ?></span></h5><br>
-                </div>              
-            </div>
-                    
+
+            <?php if(!empty($fournisseurs)) : ?>
+
+            <div class="listinfotable" style="overflow-x:auto;">
+            <table style="margin: top 30px;">
+                <tr>
+                    <th>ID</th>
+                    <th>Prénom et Nom</th>
+                    <th>Addresse Email</th>
+                    <th>Numéro de Téléphone</th>
+                    <th>Action:</th>
+                </tr>  
+            <?php foreach($fournisseurs as $fournsisseur) : ?>
+                <tr>
+                    <td><?= $fournsisseur->id ?></td>
+                    <td><?= $fournsisseur->name ?></td>
+                    <td><?= $fournsisseur->email ?></td>
+                    <td><?= $fournsisseur->tel ?></td>
+                    <td>
+                        <a onclick="return confirm('Voulez vous vraiment supprimer ce fournsisseur ?');" class="submit-btn1" href="delFournisseur.php?id=<?=$fournsisseur->id ?>"><i class="fas fa-trash-alt"></i> Supprimer</a>
+                   </td>
+                </tr>
+
+            <?php endforeach; ?>
+
+            </table>
+            <?php else: ?>
+                <h8 ><i class="fas fa-exclamation-triangle"></i> Aucun fournisseur pour le moment </h8>
+            <?php endif; ?>
+
+</div>
+                
         </main>
     </div>
 <label for="sidebar-toggle" class="body-label"></label>
 
 </body>
 
- <!-- SCRIPTS-->
+<!-- SCRIPTS-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="../librairies/Parsley/parsley.min.js"></script>
 <script src="../librairies/Parsley/i18n/fr.js"></script>
 <script src="../librairies/alertify/alertify.min.js"></script>
 
-
-<!-- Message de succès après connection -->
- <?php if(!empty($_SESSION['connected'])):?>
+<!-- Message de succès après suppression du Fournisseur -->
+ 
+<?php if(!empty($_SESSION['deleted'])):?>
     <script type="text/javascript">
-         alertify.success('Bienvenue Mr <?= $_SESSION['admin_name'] ?> ☺.');
+         alertify.success("<i class=\"fas fa-check-circle\"></i> Fournisseur supprimé avec succès !");
     </script>
   <?php endif;?>
-  <?php $_SESSION['connected']='';?>
+  <?php $_SESSION['deleted']='';?>
+ 
+  <!-- Message d'erreur après suppression du Fournisseur -->
 
-  <!-- Message de succès après ajout d'utilisateur -->
- <?php if(!empty($_SESSION['informatician_added'])):?>
+  <?php if(!empty($_SESSION['deleted_error'])):?>
     <script type="text/javascript">
-         alertify.success("<?= $_SESSION['informatician_added'] ?>");
+         alertify.error("<i class=\"fas fa-check-circle\"></i> Erreur lors de la suppression du fournisseur !");
     </script>
   <?php endif;?>
-  <?php $_SESSION['informatician_added']='';?>
+  <?php $_SESSION['deleted_error']='';?>
 
 
   

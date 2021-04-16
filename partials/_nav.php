@@ -21,7 +21,7 @@
                    </li>
 
                     <li><a class="Modal-btn1"><span class=""></span>
-                          <span style="font-size: 15px; color: #cf6000;"><i class="fas fa-sign-in-alt"></i></span>Se connecter</a>
+                          <span style="font-size: 15px; color: #cf6000; cursor:pointer;"><i class="fas fa-sign-in-alt"></i></span>Se connecter</a>
                     </li>
 
               </ul>            

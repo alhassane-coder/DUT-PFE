@@ -160,6 +160,9 @@ header {
 .header-icons span a:hover{
     color: rgba(19, 9, 9, 0.726)!important;
     background: rgb(255, 0, 0)!important;
+    transition: padding 900ms;
+    transition: background-color 900ms;
+
     padding: 4px;
 }
 
@@ -202,6 +205,15 @@ main{
 .header-actions button span {
     font-size: 1.2rem;
     margin-right: .6rem;
+}
+
+.buton{
+    color: blue;
+}
+
+.buton:hover{
+    color: rgb(0, 82, 136);
+    font-weight: bold;
 }
 
 
