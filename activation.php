@@ -14,13 +14,12 @@ if(!empty($_GET['user']) &&
 
 ){
 
-	$login = base64_decode($_GET['user']);
 
 	$token= $_GET['token'];
 
 	$q=$db->prepare('SELECT email FROM fournisseurs where login = ?');
 
-	$q->execute([$login]);
+	$q->execute([base64_decode($_GET['user'])]);
 
 	$data=$q->fetch(PDO::FETCH_OBJ);
 
