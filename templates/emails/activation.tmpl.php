@@ -52,7 +52,7 @@
 <body>
 	<div class="jumbotron">
 	    <h1 class="lead "> Activation de compte </h1>
-	    <p>Merci de nous avoir rejoint <span class="pseudo"><?= $login; ?></span> <br>
+	    <p>Merci de nous avoir rejoint <span class="pseudo"><?= $name; ?></span> <br>
 	      Pour activer votre compte veuiller cliquer sur le bouton ci-dessous!<br>
 	      Et connecter-vous ensuite avec votre email ou votre pseudo et le mot de passe que vous avez choisi.
        </p>

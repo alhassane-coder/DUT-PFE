@@ -9,7 +9,7 @@ $admin_infos=find_admin_by_id();
 
 // On selectionne la liste fournisseurs 
 
-$q=$db->query("SELECT id,name,email,tel FROM fournisseurs");
+$q=$db->query("SELECT id,name,email,tel FROM fournisseurs where active=1");
 
 $fournisseurs = $q->fetchAll(PDO::FETCH_OBJ);
 

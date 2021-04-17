@@ -39,6 +39,14 @@
               	<small id="emailHelp" class="form-text text-muted" style="color: white; " >On ne partagera votre email avec personne d'autre.</small>
             </div>
 
+            <!-- Tel Field -->
+                       	 
+             <div class="form-group">
+              	<label class="control-label" for="tel">Téléphone:</label>
+              	<input type="tel" class="form-control" id="tel"  name="tel" data-parsley-trigger="keypress" value="<?= get_input('tel') ?>" required="required">
+              	<small id="emailHelp" class="form-text text-muted" style="color: white; " >Votre numéro reste confidentiel, on ne le partagera pas.</small>
+            </div>
+
           <!--Password Field -->
                        	 
              <div class="form-group">

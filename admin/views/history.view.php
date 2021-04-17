@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="../assets/css/all.css">
     <link rel="stylesheet" type="text/css" href="../librairies/alertify/css/alertify.css">
 
-
     <title>Historique d'utilisation</title>
 </head>
 <body>
@@ -36,13 +35,40 @@
                     <small> Historique d'utilisation </small>
                 </div>
                 <div class="header-actions">
-                    <a class="buton" href="">
-                     <span><i class="fas fa-edit"></i></span>
-                      Modifier mon profil
-                    </a>
+                   
                 </div>         
             </div>
-                
+
+            <?php if(!empty($history)) : ?>
+
+            <div class="listinfotable" style="overflow-x:auto;">
+                <table style="margin: top 30px;">
+                    <tr>
+                        <th>ID</th>
+                        <th>Evènement</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr> 
+                <?php foreach($history as $history) : ?>
+                    <tr>
+                        <td><?= $history->idhistorique ?></td>
+                        <td><?= $history->evenement ?></td>
+                        <td><?= $history->date ?></td>
+                        <td>
+                            <a style="text-align:justify;" onclick="return confirm('Voulez vous vraiment supprimer cet historique ?');" class="submit-btn1" href="delHistory.php?id=<?=$history->idhistorique ?>"><i class="fas fa-trash-alt"></i> Supprimer</a>
+                        </td>
+
+                    </tr>
+
+                <?php endforeach; ?>
+
+                </table>
+            <?php else: ?>
+                <h8 ><i class="fas fa-exclamation-triangle"></i> Aucun evenement pour le moment </h8>
+            <?php endif; ?>
+
+            </div>
+
         </main>
     </div>
 <label for="sidebar-toggle" class="body-label"></label>
@@ -56,5 +82,18 @@
 <script src="../librairies/Parsley/i18n/fr.js"></script>
 <script src="../librairies/alertify/alertify.min.js"></script>
 
+<!-- Message d'alerte après succès de la suppression de l'evenement -->
+<?php if(!empty($_SESSION['story_deleted'])):?>
+    <script type="text/javascript">
+         alertify.success("<i class=\"fas fa-check-circle\"></i> évènement supprimé avec succès !");
+    </script>
+  <?php endif;?>
+  <?php $_SESSION['story_deleted']='';?>
 
-  
+<!-- En cas d'Erreur de suppression -->
+  <?php if(!empty($_SESSION['deleted_error'])):?>
+    <script type="text/javascript">
+         alertify.error("<i class=\"fas fa-check-circle\"></i> Erreur lors de la suppression de l'évènement !");
+    </script>
+  <?php endif;?>
+  <?php $_SESSION['deleted_error']='';?>

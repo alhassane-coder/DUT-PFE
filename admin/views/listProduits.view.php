@@ -36,14 +36,41 @@
                     <h1> Profil du directeur </h1>
                     <small> Liste des Produits du stock </small>
                 </div>
-                <div class="header-actions">
-                    <a class="buton" href="">
-                     <span><i class="fas fa-edit"></i></span>
-                      Modifier mon profil
-                    </a>
+                <div class="header-actions">             
                 </div>         
             </div>
-                
+            
+            <?php if(!empty($products)) : ?>
+
+            <div class="listinfotable" style="overflow-x:auto;">
+            <table style="margin: top 30px;">
+                <tr>
+                    <th>ID</th>
+                    <th>Nom</th>
+                    <th>Nom de famille</th>
+                    <th>Quantité</th>
+                    <th>Date d'expiration</th>
+                    <th>Prix</th>
+                    <th>TVA</th>
+
+                </tr>  
+            <?php foreach($products as $product) : ?>
+                <tr>
+                    <td><?= $product->idproduit ?></td>
+                    <td><?= $product->nomproduit ?></td>
+                    <td><?= $product->nomfamille ?></td>
+                    <td><?= $product->qte_produit ?></td>
+                    <td><?= $product->expire_date ?></td>
+                    <td><?= $product->prix ?></td>
+                    <td><?= $product->tva ?></td>
+                </tr>
+
+            <?php endforeach; ?>
+
+            </table>
+            <?php else: ?>
+                <h8 ><i class="fas fa-exclamation-triangle"></i> Aucun produit pour le moment </h8>
+            <?php endif; ?>     
         </main>
     </div>
 <label for="sidebar-toggle" class="body-label"></label>

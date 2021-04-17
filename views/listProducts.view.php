@@ -35,20 +35,48 @@
 
                 </div>
                 <div class="header-actions">
-                    <a class="buton" href="infoEditProfile.php">
+                  <a class="buton" href="infoEditProfile.php">
                      <span><i class="fas fa-edit"></i></span>
                       Modifier mon profil
                     </a>
                 </div>         
             </div>
-            <div class="infos_back">
-                <div class="form-content">
-                    <h5>Nom: <span style="font-size:1em; color:blue"><?= $informaticien->name ?></span></h5><br>
-                    <h5>Prenom:  <span style="font-size:1em; color:blue"><?= $informaticien->firstName ?></span></h5><br>
-                    <h5>Email:  <span style="font-size:1em; color:blue"><?= $informaticien->email?></span></h5><br>
-                    <h5>Numéro de Téléphone:  <span style="font-size:1.5em; color:blue"><?= $informaticien->tel ?></span></h5><br>
-                </div>              
-            </div>
+            <?php if(!empty($products)) : ?>
+
+            <div class="listinfotable" style="overflow-x:auto;">
+            <table style="margin: top 30px;">
+                <tr>
+                    <th>ID</th>
+                    <th>Nom</th>
+                    <th>Nom de famille</th>
+                    <th>Quantité</th>
+                    <th>Date d'expiration</th>
+                    <th>Prix</th>
+                    <th>TVA</th>
+                    <th>Action:</th>
+
+                </tr>  
+            <?php foreach($products as $product) : ?>
+                <tr>
+                    <td><?= $product->idproduit ?></td>
+                    <td><?= $product->nomproduit ?></td>
+                    <td><?= $product->nomfamille ?></td>
+                    <td><?= $product->qte_produit ?></td>
+                    <td><?= $product->expire_date ?></td>
+                    <td><?= $product->prix.'Dhs' ?></td>
+                    <td><?= $product->tva ?></td>
+                    <td>
+                      <a style="text-align:justify;" onclick="return confirm('Voulez vous vraiment supprimer ce produit ?');" class="submit-btn1" href="delProduct.php?id=<?=$product->idproduit ?>&name=<?= $product->nomproduit ?>"><i class="fas fa-trash-alt"></i> Supprimer</a><br><br>
+                      <a style="text-align:justify;" onclick="return confirm('Voulez vous vraiment modifier ce produit ?');" class="submit-btn2" href="editProduct.php?id=<?=$product->idproduit ?>&name=<?= $product->nomproduit ?>"><i class="far fa-edit"></i> Modifer</a>
+                    </td>
+                </tr>
+
+            <?php endforeach; ?>
+
+            </table>
+            <?php else: ?>
+                <h8 ><i class="fas fa-exclamation-triangle"></i> Aucun produit pour le moment </h8>
+            <?php endif; ?> 
                     
         </main>
     </div>
@@ -68,30 +96,22 @@
 
 <?php include('partials/_footer.php');?> 
 
-
-<!-- Message de succès après connection -->
- <?php if(!empty($_SESSION['connected'])):?>
+<!-- Message de succès après suppression du Produit -->
+ 
+<?php if(!empty($_SESSION['deleted'])):?>
     <script type="text/javascript">
-         alertify.success('<?= $_SESSION['connected'] ?>');
+         alertify.success("<i class=\"fas fa-check-circle\"></i> Produit supprimé avec succès !");
     </script>
   <?php endif;?>
-  <?php $_SESSION['connected']='';?>
+  <?php $_SESSION['deleted']='';?>
+ 
+  <!-- Message d'erreur après suppression du Produit -->
 
-<!-- Message de succès après modification du mot de passe -->
-<?php if(!empty($_SESSION['password_updated'])):?>
+  <?php if(!empty($_SESSION['deleted_error'])):?>
     <script type="text/javascript">
-         alertify.success('<?= $_SESSION['password_updated'] ?>');
+         alertify.error("<i class=\"fas fa-check-circle\"></i> Erreur lors de la suppression du Produit !");
     </script>
   <?php endif;?>
-  <?php $_SESSION['password_updated']='';?>
-
-  <!-- Message de succès après modification du profil -->
-<?php if(!empty($_SESSION['informatician_updated'])):?>
-    <script type="text/javascript">
-         alertify.success('<?= $_SESSION['informatician_updated'] ?>');
-    </script>
-  <?php endif;?>
-  <?php $_SESSION['informatician_updated']='';?>
-
+  <?php $_SESSION['deleted_error']='';?>
 
   

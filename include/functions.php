@@ -232,7 +232,7 @@ if(!function_exists('find_infos_by_id')){
 
 		global $db;
 
-		$q=$db->prepare("SELECT name,firstName,email,tel FROM informaticien WHERE id=? ");
+		$q=$db->prepare("SELECT login,name,firstName,email,tel FROM informaticien WHERE id=? ");
 
 		$q->execute([$id]);
 

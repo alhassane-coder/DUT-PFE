@@ -41,10 +41,6 @@
 
                 </div>
                 <div class="header-actions">
-                     <a class="buton" href="">
-                     <span><i class="fas fa-edit"></i></span>
-                      Modifier mon profil
-                    </a>
                   
                 </div>         
             </div>

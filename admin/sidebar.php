@@ -57,12 +57,6 @@
                                 Liste des fournisseurs
                              </a>
                         </li>
-                        <li>
-                             <a href="">
-                                <span><i class="far fa-edit"></i> </span>
-                               Modifier mon mot de passe
-                             </a>
-                        </li>
 
                     </ul>
             </div>

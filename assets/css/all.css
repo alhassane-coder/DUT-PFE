@@ -243,8 +243,8 @@ img{
 }
 .infos{ 
     color: black !important;
-    background: rgba(83, 141, 207,0.2);
-    border: 1px solid black !important;
+    background:none;
+    border: none;
     margin-bottom: 100px;
     margin-top: 5px;
     padding: 20px;

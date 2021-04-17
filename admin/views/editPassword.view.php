@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="../librairies/alertify/css/alertify.css">
 
 
-    <title>Ajouter des informaticiens</title>
+    <title>Modifier le mot de passe</title>
 </head>
 <body>
     <input type="checkbox" name="" id="sidebar-toggle">
@@ -33,70 +33,50 @@
             <div class="page-header">
                 <div>
                     <h1> Profil du directeur </h1>
-                    <small> Ajouter des informaticiens </small>
+                    <small> Modifier le mot de passe </small>
                 </div>
                 <div class="header-actions">
-                   
+                    <a class="buton" href="">
+                     <span><i class="fas fa-edit"></i></span>
+                      Modifier mon profil
+                    </a>
                 </div>         
             </div>
             <div class="form-content">
                 <?php include('../partials/_errors.php'); ?>
                 <?php include('../include/scripts.php');?>
                   <form  method="POST" class="infos" data-parsley-validate >
-			   <h4 style="color: rgb(0, 174, 255); margin-bottom: 10px;">Ajouter un informaticien</h4>
+			   <h4 style="color: rgb(0, 174, 255); margin-bottom: 10px;">Modifier le mot de passe</h4>
 
 			   <table class="tb-add" align=center cellspacing=10 >
-                            <!--Username Field -->
-					<th class="hidden_th">Nom d'utilisateur:</th>
+                            <!--Mot de passe actuel -->
+					<th class="hidden_th">Mot de passe actuel:</th>
 					<tr>
-						<td class="column1">Nom d'utilisateur:</td>
-						<td><input type="text" placeholder="Nom d'utilisateur:"id="name" name="login" required="required" data-parsley-minlength="3" data-parsley-trigger="change"></td>
+						<td class="column1">Mot de passe actuel: </td>
+						<td><input type="password" placeholder="Mot de passe actuel: "id="password" name="current_password" required="required" data-parsley-minlength="6" data-parsley-trigger="change"></td>
 					</tr>
 
-                        <!--  Name Field -->
+                        <!--  Nouveau mot de passe -->
                                     
-					<th class="hidden_th">Nom:</th>
+					<th class="hidden_th">Nouveau mot de passe:</th>
 					<tr>
-						<td class="column1">Nom:</td>
-						<td><input type="text" placeholder="Nom:"name="name" required="required"  data-parsley-minlength="5" data-parsley-trigger="change"></td>
-					</tr>
-          
-					<!--  firstName Field -->
-					<th class="hidden_th">Prénom:</th>
-					<tr>
-						<td class="column1">Prénom:</td>
-						<td><input type="text" placeholder="Prénom:"name="firstName" required="required"  data-parsley-minlength="5" data-parsley-trigger="change"></td>
+						<td class="column1">Nouveau mot de passe:</td>
+						<td><input type="password" placeholder="Nouveau mot de passe:"name="new_password" id="new_password" required="required"  data-parsley-minlength="6" data-parsley-trigger="change"></td>
 					</tr>
 
-                    <!-- Email Field -->
-					<th class="hidden_th">Email:</th>
+                    <!--Config New Password Field -->
+                        <th class="hidden_th">Confirmer nouveau mot de passe:</th>
 					<tr>
-						<td class="column1">Email:</td>
-						<td><input type="email" placeholder="Addresse Email:"name="email" required="required"   data-parsley-trigger="change"></td>
-					</tr>
-
-                     <!-- Tel Field -->
-					<th class="hidden_th">Téléphone:</th>
-					<tr>
-						<td class="column1">Téléphone</td>
-						<td><input type="tel" placeholder="Numéro de Téléphone:"name="tel" required="required"  data-parsley-minlength="8" data-parsley-trigger="change"></td>
-					</tr>
-
-                    <!--Password Field -->
-                        <th class="hidden_th">Mot de passe:</th>
-					<tr>
-						<td class="column1">Mot de passe:</td>
-						<td><input type="password" placeholder="Mot de passe:"name="password" required="required"  data-parsley-minlength="5" data-parsley-trigger="keypres"></td>
+						<td class="column1">Confirmer nouveau mot de passe:</td>
+						<td><input type="password" placeholder="Confirmer nouveau  mot de passe:"name="new_password_confirm" required="required"  data-parsley-minlength="6" data-parsley-equalto="#new_password" data-parsley-trigger="keypres"></td>
 					</tr>            
      
 			</table>
-			<input type="submit" class="submit-btn" value="Ajouter" name="add_informaticien">
+			    <input type="submit" style="margin-top: 20px;" class="submit-btn3" value="Modifier" name="change_password">
 				                      
                   
                 </form>
-		
-
-                </div>                                  
+         </div>                                  
         </main>
     </div>
 <label for="sidebar-toggle" class="body-label"></label>

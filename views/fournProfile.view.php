@@ -83,10 +83,10 @@
 
                 </div>
                 <div class="header-actions">
-                     <button>
+                    <a class="buton" href="">
                      <span><i class="fas fa-edit"></i></span>
                       Modifier mon profil
-                    </button>
+                    </a>
                 </div>         
             </div>
             <div class="infos_back">

@@ -18,9 +18,15 @@ if(isset($_POST['register']))
 	         {
 	         	$errors[]='<i class="fas fa-exclamation-triangle"></i> Nom d\'utilisateur trop court! (Minimum 3 caractères)';
 	         }
+
              if(mb_strlen($name)<3)
 	         {
 	         	$errors[]='<i class="fas fa-exclamation-triangle"></i> Nom trop court! (Minimum 3 caractères)';
+	         }
+
+           if(mb_strlen($tel)<8)
+	         {
+	         	$errors[]='<i class="fas fa-exclamation-triangle"></i> Numéro trop court! (Minimum 8 caractères)';
 	         }
 
 	         if(!filter_var($email,FILTER_VALIDATE_EMAIL))
@@ -82,17 +88,18 @@ if(isset($_POST['register']))
 
                 // On envoi finalement l'email
 
-                if(  mail($to, $subject, $content, implode("\r\n", $headers)))
+                if( mail($to, $subject, $content, implode("\r\n", $headers)))
                 {
 
                       //On enregistre l'utilisateur et on le  redirige vers la page d'accueil et l'alerter pour qu'il verifie sa boite mail
 
-                  $q=$db->prepare('INSERT INTO fournisseurs (login,name,email,password) VALUES(:login,:name,:email,:password)');
+                  $q=$db->prepare('INSERT INTO fournisseurs (login,name,email,tel,password) VALUES(:login,:name,:email,:tel,:password)');
 
                 	  $success=$q->execute(array(
                             'login'=>$login,
                             'name'=>$name,
                             'email'=>$email,
+                            'tel'=>$tel,
                             'password'=>$password            
 
                 	  ));

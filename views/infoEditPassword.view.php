@@ -41,14 +41,43 @@
                     </a>
                 </div>         
             </div>
-            <div class="infos_back">
-                <div class="form-content">
-                    <h5>Nom: <span style="font-size:1em; color:blue"><?= $informaticien->name ?></span></h5><br>
-                    <h5>Prenom:  <span style="font-size:1em; color:blue"><?= $informaticien->firstName ?></span></h5><br>
-                    <h5>Email:  <span style="font-size:1em; color:blue"><?= $informaticien->email?></span></h5><br>
-                    <h5>Numéro de Téléphone:  <span style="font-size:1.5em; color:blue"><?= $informaticien->tel ?></span></h5><br>
-                </div>              
-            </div>
+            <div class="form-content">
+                <?php include('partials/_errors.php'); ?>
+                <?php include('include/scripts.php');?>
+                  <form  method="POST" class="infos" data-parsley-validate >
+			   <h4 style="color: rgb(0, 174, 255); margin-bottom: 10px;">Modifier le mot de passe</h4>
+
+			   <table class="tb-add" align=center cellspacing=10 >
+                            <!--Mot de passe actuel -->
+					<th class="hidden_th">Mot de passe actuel:</th>
+					<tr>
+						<td class="column1">Mot de passe actuel: </td>
+						<td><input type="password" placeholder="Mot de passe actuel: "id="password" name="current_password" required="required" data-parsley-minlength="6" data-parsley-trigger="change"></td>
+					</tr>
+
+                        <!--  Nouveau mot de passe -->
+                                    
+					<th class="hidden_th">Nouveau mot de passe:</th>
+					<tr>
+						<td class="column1">Nouveau mot de passe:</td>
+						<td><input type="password" placeholder="Nouveau mot de passe:"name="new_password" id="new_password" required="required"  data-parsley-minlength="6" data-parsley-trigger="change"></td>
+					</tr>
+
+                    <!--Config New Password Field -->
+                        <th class="hidden_th">Confirmer nouveau mot de passe:</th>
+					<tr>
+						<td class="column1">Confirmer nouveau mot de passe:</td>
+						<td><input type="password" placeholder="Confirmer nouveau  mot de passe:"name="new_password_confirm" required="required"  data-parsley-minlength="6" data-parsley-equalto="#new_password" data-parsley-trigger="keypres"></td>
+					</tr>            
+     
+			  </table>
+			    <input type="submit" style="margin-top: 20px;" class="submit-btn3" value="Modifier" name="change_password">
+				                      
+                  
+                </form>
+		
+
+         </div>                
                     
         </main>
     </div>
@@ -67,31 +96,3 @@
 </body>
 
 <?php include('partials/_footer.php');?> 
-
-
-<!-- Message de succès après connection -->
- <?php if(!empty($_SESSION['connected'])):?>
-    <script type="text/javascript">
-         alertify.success('<?= $_SESSION['connected'] ?>');
-    </script>
-  <?php endif;?>
-  <?php $_SESSION['connected']='';?>
-
-<!-- Message de succès après modification du mot de passe -->
-<?php if(!empty($_SESSION['password_updated'])):?>
-    <script type="text/javascript">
-         alertify.success('<?= $_SESSION['password_updated'] ?>');
-    </script>
-  <?php endif;?>
-  <?php $_SESSION['password_updated']='';?>
-
-  <!-- Message de succès après modification du profil -->
-<?php if(!empty($_SESSION['informatician_updated'])):?>
-    <script type="text/javascript">
-         alertify.success('<?= $_SESSION['informatician_updated'] ?>');
-    </script>
-  <?php endif;?>
-  <?php $_SESSION['informatician_updated']='';?>
-
-
-  
