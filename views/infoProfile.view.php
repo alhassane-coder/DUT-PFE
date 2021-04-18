@@ -94,4 +94,10 @@
   <?php $_SESSION['informatician_updated']='';?>
 
 
-  
+  <!-- Message de succès après appel -->
+<?php if(!empty($_SESSION['offre_added'])):?>
+    <script type="text/javascript">
+         alertify.success('<?= $_SESSION['offre_added'] ?>');
+    </script>
+  <?php endif;?>
+  <?php $_SESSION['offre_added']='';?>

@@ -61,11 +61,11 @@
                   <td><?= $informaticien->email ?></td>
                   <td><?= $informaticien->tel ?></td>
                   <td>
-                      <a style="text-align:justify;" onclick="return confirm('Voulez vous vraiment supprimer cet informaticien ?');" class="submit-btn1" href="delInformaticien.php?id=<?=$informaticien->id ?>"><i class="fas fa-trash-alt"></i> Supprimer</a><br><br>
+                      <a style="text-align:justify;" onclick="return confirm('Voulez vous vraiment supprimer cet informaticien ?');" class="submit-btn1" href="delInformaticien.php?id=<?=$informaticien->id ?>&name=<?=$informaticien->login ?>"><i class="fas fa-trash-alt"></i> Supprimer</a><br><br>
                      <?php if($informaticien->active == 1) : ?>
-                      <a style="text-align:justify;" onclick="return confirm('Voulez vous vraiment bloquer cet informaticien ?');" class="submit-btn2" href="blockInformaticien.php?id=<?=$informaticien->id ?>"><i class="fas fa-stop-circle"></i> Bloquer</a>
+                      <a style="text-align:justify;" onclick="return confirm('Voulez vous vraiment bloquer cet informaticien ?');" class="submit-btn2" href="blockInformaticien.php?id=<?=$informaticien->id ?>&name=<?=$informaticien->login ?>"><i class="fas fa-stop-circle"></i> Bloquer</a>
                       <?php else: ?>
-                      <a style="text-align:justify;" onclick="return confirm('Voulez vous vraiment débloquer cet informaticien ?');" class="submit-btn3" href="deblockInformaticien.php?id=<?=$informaticien->id ?>"><i class="fas fa-check-circle"></i> Debloquer</a>
+                      <a style="text-align:justify;" onclick="return confirm('Voulez vous vraiment débloquer cet informaticien ?');" class="submit-btn3" href="deblockInformaticien.php?id=<?=$informaticien->id ?>&name=<?=$informaticien->login ?>"><i class="fas fa-check-circle"></i> Debloquer</a>
                       <?php endif; ?>
                 </td>
 

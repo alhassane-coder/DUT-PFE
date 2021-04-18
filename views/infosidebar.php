@@ -39,7 +39,7 @@
                              </a>
                         </li>
                         <li>
-                             <a href="">
+                             <a href="addOffer.php">
                                 <span><i class="fab fa-buffer"></i></i> </span>
                                 Faire un appel d'offre
                              </a>

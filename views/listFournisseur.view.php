@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="librairies/alertify/css/alertify.css">
 
 
-    <title>Informaticien dashboard</title>
+    <title>Liste des fournisseurs</title>
 </head>
 <body>
     <input type="checkbox" name="" id="sidebar-toggle">

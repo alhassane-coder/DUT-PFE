@@ -9,7 +9,7 @@ $admin_infos=find_admin_by_id();
 
 // On selectionne la liste informaticiens 
 
-$q=$db->query("SELECT id,name,firstName,email,tel,active FROM informaticien");
+$q=$db->query("SELECT id,login,name,firstName,email,tel,active FROM informaticien");
 
 $informaticiens = $q->fetchAll(PDO::FETCH_OBJ);
 

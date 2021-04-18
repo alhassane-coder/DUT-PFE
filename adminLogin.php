@@ -32,6 +32,17 @@ if(isset($_POST['login']))
             $_SESSION['info_login']= $informaticien->login;
             $_SESSION['email']= $informaticien->email;
 
+            setlocale(LC_TIME, ['fr', 'fra', 'fr_FR']);
+            $date=strftime('%A %d %B %Y').' à '.date('h:i:s');
+            
+            // On enregistre l'évènement en base de donnée
+            $q=$db->prepare('INSERT INTO historique(evenement,date) VALUES (:event,:date) ');
+            $event='L\'informaticien <span style="color:blue">'.$informaticien->login.'</span> a accedé au stock';
+            $q->execute(array(
+            'event'=>$event,
+            'date'=>$date
+            ));
+
             redirect_friendly('infoProfile.php?id='.$informaticien->id);
 
 

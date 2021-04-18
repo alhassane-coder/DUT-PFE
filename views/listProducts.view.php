@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="librairies/alertify/css/alertify.css">
 
 
-    <title>Informaticien dashboard</title>
+    <title>Liste des produits</title>
 </head>
 <body>
     <input type="checkbox" name="" id="sidebar-toggle">
@@ -67,7 +67,7 @@
                     <td><?= $product->tva ?></td>
                     <td>
                       <a style="text-align:justify;" onclick="return confirm('Voulez vous vraiment supprimer ce produit ?');" class="submit-btn1" href="delProduct.php?id=<?=$product->idproduit ?>&name=<?= $product->nomproduit ?>"><i class="fas fa-trash-alt"></i> Supprimer</a><br><br>
-                      <a style="text-align:justify;" onclick="return confirm('Voulez vous vraiment modifier ce produit ?');" class="submit-btn2" href="editProduct.php?id=<?=$product->idproduit ?>&name=<?= $product->nomproduit ?>"><i class="far fa-edit"></i> Modifer</a>
+                      <a style="text-align:justify;" onclick="return confirm('Voulez vous vraiment modifier ce produit ?');" class="submit-btn2" href="editProduct.php?id=<?=$product->idproduit ?>"><i class="far fa-edit"></i> Modifer</a>
                     </td>
                 </tr>
 
@@ -115,3 +115,30 @@
   <?php $_SESSION['deleted_error']='';?>
 
   
+<!-- Message de succès après ajout de Produit -->
+ 
+<?php if(!empty($_SESSION['product_added'])):?>
+    <script type="text/javascript">
+         alertify.success("<?= $_SESSION['product_added'] ?>");
+    </script>
+  <?php endif;?>
+  <?php $_SESSION['product_added']='';?>
+
+  <!-- Message d'erreur après trafic de l'url -->
+ 
+<?php if(!empty($_SESSION['url_error'])):?>
+    <script type="text/javascript">
+         alertify.error("<i class=\"fas fa-exclamation-triangle\"></i>Evitez de trafiquer l\'url");
+    </script>
+  <?php endif;?>
+  <?php $_SESSION['url_error']='';?>
+
+<!-- Message de succès après suppression du Produit -->
+ 
+<?php if(!empty($_SESSION['product_edited'])):?>
+    <script type="text/javascript">
+         alertify.success("<i class=\"fas fa-check-circle\"></i> Produit modifié avec succès !");
+    </script>
+  <?php endif;?>
+  <?php $_SESSION['product_edited']='';?>
+ 

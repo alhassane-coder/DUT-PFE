@@ -59,7 +59,7 @@
                     <td><?= $fournsisseur->email ?></td>
                     <td><?= $fournsisseur->tel ?></td>
                     <td>
-                        <a onclick="return confirm('Voulez vous vraiment supprimer ce fournsisseur ?');" class="submit-btn1" href="delFournisseur.php?id=<?=$fournsisseur->id ?>"><i class="fas fa-trash-alt"></i> Supprimer</a>
+                        <a onclick="return confirm('Voulez vous vraiment supprimer ce fournsisseur ?');" class="submit-btn1" href="delFournisseur.php?id=<?=$fournsisseur->id ?>&name=<?=$fournsisseur->name ?>"><i class="fas fa-trash-alt"></i> Supprimer</a>
                    </td>
                 </tr>
 

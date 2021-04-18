@@ -61,7 +61,7 @@ if(isset($_POST['update_informaticien'])){
                         
                         // On enregistre l'évènement en base de donnée
                         $q=$db->prepare('INSERT INTO historique(evenement,date) VALUES (:event,:date) ');
-                        $event='l\'informaticien <span style="color:blue">'.get_session('info_login').'</span> a mis à jour son profil';
+                        $event='l\'informaticien <span style="color:blue">'.$informaticien->name.' '.$informaticien->firstName.'</span> a mis à jour son profil';
                         $q->execute(array(
                         'event'=>$event,
                         'date'=>$date

@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="librairies/alertify/css/alertify.css">
 
 
-    <title>Informaticien dashboard</title>
+    <title>Modifier le mot de passe</title>
 </head>
 <body>
     <input type="checkbox" name="" id="sidebar-toggle">
@@ -48,6 +48,7 @@
 			   <h4 style="color: rgb(0, 174, 255); margin-bottom: 10px;">Modifier le mot de passe</h4>
 
 			   <table class="tb-add" align=center cellspacing=10 >
+               
                             <!--Mot de passe actuel -->
 					<th class="hidden_th">Mot de passe actuel:</th>
 					<tr>

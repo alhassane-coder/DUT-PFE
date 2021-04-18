@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="librairies/alertify/css/alertify.css">
 
 
-    <title>Modification du profil</title>
+    <title>Modifier un produit</title>
 </head>
 <body>
     <input type="checkbox" name="" id="sidebar-toggle">
@@ -42,47 +42,55 @@
                 <?php include('partials/_errors.php'); ?>
                 <?php include('include/scripts.php');?>
                   <form  method="POST" class="infos" data-parsley-validate >
-			   <h4 style="color: rgb(0, 174, 255); margin-bottom: 10px;">Modifer le profil</h4>
+			   <h4 style="color: rgb(0, 174, 255); margin-bottom: 10px;">Modifier un produit</h4>
 
 			   <table class="tb-add" align=center cellspacing=10 >
-                            <!--Username Field -->
-					<th class="hidden_th">Nom d'utilisateur:</th>
+                        
+                            <!--Product name Field -->
+					<th class="hidden_th">Nom du produit:</th>
 					<tr>
-						<td class="column1">Nom d'utilisateur:</td>
-						<td><input type="text" placeholder="Nom d'utilisateur:"id="name" name="login" value=<?= $informaticien->login ?>  required="required" data-parsley-minlength="3" data-parsley-trigger="change"></td>
+						<td class="column1">Nom du produit:</td>
+						<td><input type="text" placeholder="Nom du produit:"id="productname" name="productname" value="<?= $product->nomproduit  ?>"   required="required" data-parsley-minlength="3" data-parsley-trigger="change"></td>
 					</tr>
 
-                        <!--  Name Field -->
+                        <!-- Family Name Field -->
                                     
-					<th class="hidden_th">Nom:</th>
+					<th class="hidden_th">Nom famille :</th>
 					<tr>
-						<td class="column1">Nom:</td>
-						<td><input type="text" placeholder="Nom:"name="name" required="required" value=<?= $informaticien->name ?> data-parsley-minlength="5" data-parsley-trigger="change"></td>
+						<td class="column1">Nom famille :</td>
+						<td><input type="text" placeholder="Nom famille :"name="familyname" value="<?= $product->nomfamille  ?>" required="required" data-parsley-minlength="3" data-parsley-trigger="change"></td>
 					</tr>
           
-					<!--  firstName Field -->
-					<th class="hidden_th">Prénom:</th>
+					<!--  Quantity Field -->
+					<th class="hidden_th">Quantité du produit:</th>
 					<tr>
-						<td class="column1">Prénom:</td>
-						<td><input type="text" placeholder="Prénom:"name="firstName" required="required" value=<?= $informaticien->firstName?>  data-parsley-minlength="5" data-parsley-trigger="change"></td>
+						<td class="column1">Quantité du produit:</td>
+						<td><input type="number" placeholder="Quantité du produit:"name="qte" value="<?= $product->qte_produit?>" required="required"></td>
 					</tr>
 
-                    <!-- Email Field -->
-					<th class="hidden_th">Email:</th>
+                    <!-- Expire date Field -->
+					<th class="hidden_th">Date d'expiration:</th>
 					<tr>
-						<td class="column1">Email:</td>
-						<td><input type="email" placeholder="Addresse Email:"name="email" value=<?= $informaticien->email?> required="required"   data-parsley-trigger="change"></td>
+						<td class="column1">Date d'expiration:</td>
+						<td><input type="date" placeholder="Date d'expiration:"name="expire_date" value="<?= $product->expire_date ?>" required="required" ></td>
 					</tr>
 
-                     <!-- Tel Field -->
-					<th class="hidden_th">Téléphone:</th>
+                     <!-- Price Field -->
+					<th class="hidden_th">Prix:</th>
 					<tr>
-						<td class="column1">Téléphone</td>
-						<td><input type="tel" placeholder="Numéro de Téléphone:"name="tel" value=<?= $informaticien->tel?> required="required"  data-parsley-minlength="8" data-parsley-trigger="change"></td>
-					</tr>           
+						<td class="column1">Prix</td>
+						<td><input type="number" placeholder="Prix:"name="price" value="<?= $product->prix ?>" required="required"></td>
+					</tr> 
+
+                    <!-- TVA Field -->
+					<th class="hidden_th">TVA:</th>
+					<tr>
+						<td class="column1">TVA</td>
+						<td><input type="text" placeholder="TVA:"name="tva" value="<?= $product->tva ?>" required="required"></td>
+					</tr>            
      
 			    </table>
-			<input type="submit" style="margin-top:10px;" class="submit-btn3" value="Modifier" name="update_informaticien">
+			    <input type="submit" style="margin-top:10px;" class="submit-btn" value="Modifer" name="add_product">
 				                      
                   
                 </form>

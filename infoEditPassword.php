@@ -60,7 +60,7 @@ if(isset($_POST['change_password'])){
 								
 								// On enregistre l'évènement en base de donnée
 								$q=$db->prepare('INSERT INTO historique(evenement,date) VALUES (:event,:date) ');
-								$event='l\'informaticien <span style="color:blue">'.get_session('info_login').'</span> a modifié son mot de passe';
+								$event='l\'informaticien <span style="color:blue">'.$informaticien->name.' '.$informaticien->firstName.'</span> a modifié son mot de passe';
 								$q->execute(array(
 								'event'=>$event,
 								'date'=>$date

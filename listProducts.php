@@ -4,7 +4,7 @@ include "config/database.php";
 
 $informaticien = find_infos_by_id(get_session('info_id'));
 
-// On selectionne la liste fournisseurs 
+// On selectionne la liste des produits 
 
 $q=$db->query("SELECT * FROM produits ");
 
