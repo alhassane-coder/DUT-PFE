@@ -35,16 +35,6 @@
                    <input type="password" class="form-control" id="password"  name="password" required="required" data-parsley-minlength="6" data-parsley-trigger="keypres" >
 
              </div>
-
-         <!-- Remember me Field -->
-
-         <div class="form-group">
-           <label class="control-label" for="session_active">
-                <input type="checkbox" id="session_active"  name="remember_me"/>
-                Garder ma session active
-           </label>
-         </div>
-
            <input type="submit" class="btn btn-primary" value="Connection" name="login">
            <p>
              <h5 class="text-center">Vous avez oublié votre mot passe ?

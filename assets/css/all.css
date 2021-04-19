@@ -236,10 +236,13 @@ img{
 }
 
 .infos_back{
-    margin-top: 5px;
-    border: 1px solid black !important;
+    margin-top: 30px !important;
+    border: 1px solid rgb(0, 174, 255) !important;
     padding: 20px;
     background: rgba(83, 141, 207,0.2);
+    width: 60%;
+    margin: auto;
+    
 }
 .infos{ 
     color: black !important;
@@ -286,10 +289,21 @@ img{
     padding: 2px;
 
 }
+
+
 .submit-btn3{
     width: 100px;
     height: 40px;
     background: rgba(0, 190, 16, 0.815)!important;
+    color: white;
+    cursor: pointer;
+    border: .5px solid white;
+    padding: 2px;
+}
+.submit-btn4{
+    width: 100px;
+    height: 40px;
+    background: rgb(0, 174, 255)!important;
     color: white;
     cursor: pointer;
     border: .5px solid white;
@@ -309,8 +323,9 @@ img{
 .submit-btn3:hover {
     background: rgb(5, 58, 3) !important;
 }
-
-
+.submit-btn4:hover {
+    background: blue !important;
+}
 		/************
 
 		 PARSLEY CSS
@@ -414,7 +429,10 @@ td input[type="number"],td input[type="date"]
 .submit-btn
 {
 position: unset;
-margin-top: 20px;
+margin-top: 30px !important;
+}
+.infos_back{
+    width: 100% !important;
 }
 
 }
@@ -422,9 +440,12 @@ margin-top: 20px;
     .submit-btn
     {
     position: unset;
-    margin-top: 20px;
-    }
-
+    margin-top: 30px !important;
+    
+}
+.infos_back{
+    width: 100% !important;
+}
 
 }
 
@@ -454,4 +475,8 @@ margin-top: 20px;
 h8 {
     text-align:center !important;
     color:red;
+}
+
+.qrcode{
+    width: 90px !important;
 }

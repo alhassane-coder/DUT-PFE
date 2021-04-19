@@ -23,6 +23,10 @@ if(isset($_POST['add_product'])){
 	         {
 	         	$errors[]='<i class="fas fa-exclamation-triangle"></i> Nom de famille du produit trop court! (Minimum 3 caractères)';
 	         }
+			 if(mb_strlen($qte) <= 0 )
+			{
+				$errors[]='<i class="fas fa-exclamation-triangle"></i> La quantité du produit doit etre supérieure à 0 ! ';
+			}
              
              if(count($errors) == 0){
 
@@ -38,7 +42,33 @@ if(isset($_POST['add_product'])){
 							'price'=>$price,
                             'tva'=>$tva
                 	  ));
-                    if($success){
+					 
+					  $id = $db->lastInsertId();
+
+					 // On utilise la libraie phpqrcode pour générer nos codes QR
+						require_once('librairies/phpqrcode/qrlib.php');
+
+						//On choisit le chemin de l'image 
+						if(!file_exists('qrcodes/')){
+							$path = 'qrcodes/';
+							mkdir($path);
+							chmod($path,0777);
+						}
+
+						//Le nom du fichier sera l'id du produit concaténé
+						$file='qrcodes/'.$id.'-'.$productname.'.png';
+						if($file){chmod($file,0777);}
+
+						//Le contenu de notre  code sera le lien vers le produit
+						$data='http://pfe.rtest.local/Pfe/productView.phpid=1';
+
+						//On génère enfin le code
+						QRcode::png($data,$file,2,2);
+						//ON enregistre le chemin du code qr en base de donnée
+						$q=$db->prepare('UPDATE produits set qrcode=? where idproduit=?');
+						$qr=$q->execute([$file,$id]);
+                
+						if($success && $qr){
 						//On génère la date et l'heure
 						setlocale(LC_TIME, ['fr', 'fra', 'fr_FR']);
 						$date=strftime('%A %d %B %Y').' à '.date('h:i:s');

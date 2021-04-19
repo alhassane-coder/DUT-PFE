@@ -53,6 +53,7 @@
                     <th>Date d'expiration</th>
                     <th>Prix</th>
                     <th>TVA</th>
+                    <th>CODE QR</th>
                     <th>Action:</th>
 
                 </tr>  
@@ -65,15 +66,18 @@
                     <td><?= $product->expire_date ?></td>
                     <td><?= $product->prix.'Dhs' ?></td>
                     <td><?= $product->tva ?></td>
+                    <td><img class="qrcode" src="<?= $product->qrcode ?>" alt="Code qr du produit"> </td>
                     <td>
                       <a style="text-align:justify;" onclick="return confirm('Voulez vous vraiment supprimer ce produit ?');" class="submit-btn1" href="delProduct.php?id=<?=$product->idproduit ?>&name=<?= $product->nomproduit ?>"><i class="fas fa-trash-alt"></i> Supprimer</a><br><br>
-                      <a style="text-align:justify;" onclick="return confirm('Voulez vous vraiment modifier ce produit ?');" class="submit-btn2" href="editProduct.php?id=<?=$product->idproduit ?>"><i class="far fa-edit"></i> Modifer</a>
+                      <a style="text-align:justify;"  onclick="return confirm('Voulez vous vraiment modifier ce produit ?');" class="submit-btn2" href="editProduct.php?id=<?=$product->idproduit ?>"><i class="far fa-edit"></i> Modifer</a>
                     </td>
                 </tr>
 
             <?php endforeach; ?>
 
-            </table>
+            </table><br><br>
+            <a style="padding: 2px;" onclick="return confirm('Confirmez-vous l\'impression ?');" target="_blank" class="submit-btn4" href="printProduct.php"><i class="fa fa-print" aria-hidden="true"></i> Imprimer</a>
+
             <?php else: ?>
                 <h8 ><i class="fas fa-exclamation-triangle"></i> Aucun produit pour le moment </h8>
             <?php endif; ?> 

@@ -13,12 +13,17 @@ include "config/database.php";
         $errors=[];
 
 			extract($_POST);
+          
+            if(strlen($qte) <= 0 )
+			{
+				$errors[]='<i class="fas fa-exclamation-triangle"></i> La quantité du produit doit etre supérieure à 0 ! ';
+			}
 
 			if(mb_strlen($productname)<3)
 			{
 				$errors[]='<i class="fas fa-exclamation-triangle"></i> Nom du produit trop court! (Minimum 3 caractères)';
 			}
-
+        
             if(count($errors) == 0){
              
                 // On ajoute l'offre dans notre base de donnée

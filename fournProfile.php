@@ -14,7 +14,7 @@ if(isset($_GET['id'])){
     
 
 }else{
-    redirect("fournProfile.php?id=".get_session('fourn_id'));
+    redirect("fournissLogin.php");
 }
 
 
@@ -24,4 +24,3 @@ if(isset($_GET['id'])){
 
 
 include 'views/fournProfile.view.php';
-

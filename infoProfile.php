@@ -15,7 +15,7 @@ if(isset($_GET['id'])){
 
 }else{
     set_flash("<i class=\"fas fa-exclamation-triangle\"></i>  ID manquant dans l'url","warning");
-    redirect("infoProfile.php?id=".get_session('info_id'));
+    redirect('adminLogin.php');
 }
 
 
