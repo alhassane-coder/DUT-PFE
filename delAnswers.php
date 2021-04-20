@@ -3,12 +3,12 @@
  require("include/functions.php");
  include('config/database.php');
 
-if(!empty($_GET['id']) && !empty($_GET['name'])){
+if(!empty($_GET['id'])){
 
-//On supprime l'informaticien indiqué à l'url
+//On supprime la nouveauté indiquée à l'url
  extract($_GET); 
 
- $q = $db->prepare('DELETE FROM produits WHERE idproduit=?');
+ $q = $db->prepare('DELETE FROM reponses WHERE id=?');
  $sucess=$q->execute([$id]);
 
  if($sucess){
@@ -18,17 +18,17 @@ if(!empty($_GET['id']) && !empty($_GET['name'])){
     $date=strftime('%A %d %B %Y').' à '.date('h:i:s');
      
     $q=$db->prepare('INSERT INTO historique(evenement,date) VALUES (:event,:date) ');
-    $event='l\'informaticien <span style="color:blue">'.get_session('info_login').'</span> a supprimé le produit <span style="color:blue">'.$name;
+    $event='l\'informaticien <span style="color:blue">'.get_session('info_login').'</span> a supprimé une reponse ';
     $q->execute(array(
        'event'=>$event,
        'date'=>$date
     ));
   $_SESSION['deleted']="deleted";
-  redirect('listProducts.php');
+  redirect('listAnswers.php');
 
 }else{
     $_SESSION['deleted_error']='deleted';
-    redirect('listProducts.php');
+    redirect('listAnswers.php');
 }
     
 

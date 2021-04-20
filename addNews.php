@@ -19,6 +19,10 @@ include "config/database.php";
 			{
 				$errors[]='<i class="fas fa-exclamation-triangle"></i> La quantité du produit doit etre supérieure à 0 ! ';
 			}
+            if(empty($fourniss_infos->name))
+			{
+				$errors[]='<i class="fas fa-exclamation-triangle"></i> Le nom du fournisseur ne doit pas etre vide! ';
+			}
 
 			if(mb_strlen($productname)<3)
 			{
@@ -28,8 +32,9 @@ include "config/database.php";
             if(count($errors) == 0){
              
                 // On ajoute la nouveauté  dans notre base de donnée
-                $q=$db->prepare('INSERT INTO news (produit,qte,date,description) VALUES(:produit,:qte,:expire,:description)');
+                $q=$db->prepare('INSERT INTO news (fournissName,produit,qte,date,description) VALUES(:fournissName,:produit,:qte,:expire,:description)');
                 $success=$q->execute(array(
+                  'fournissName'=>$fourniss_infos->name ,
                   'produit'=>$productname,
                   'qte'=>$qte,
                   'expire'=>$expire_date,

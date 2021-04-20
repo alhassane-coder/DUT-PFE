@@ -15,11 +15,11 @@ if(isset($_POST['add_product'])){
             
 	         extract($_POST);
 
-	         if(mb_strlen($productname)<3)
+	         if(mb_strlen($productname)<1)
 	         {
 	         	$errors[]='<i class="fas fa-exclamation-triangle"></i> Nom du produit trop court! (Minimum 3 caractères)';
 	         }
-             if(mb_strlen($familyname)<5)
+             if(mb_strlen($familyname)<1)
 	         {
 	         	$errors[]='<i class="fas fa-exclamation-triangle"></i> Nom de famille du produit trop court! (Minimum 3 caractères)';
 	         }

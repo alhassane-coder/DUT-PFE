@@ -28,6 +28,12 @@
                              </a>
                         </li>
                         <li>
+                             <a href="listAnswers.php">
+                                <span><i class="fa fa-commenting-o" aria-hidden="true"></i></span>
+                                Reponses aux appels d'offre
+                             </a>
+                        </li>
+                        <li>
                              <a href="listMagasinier.php">
                                 <span><i class="fas fa-list"></i> </span>
                                 Liste des magasiniers

@@ -41,7 +41,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
           $q=$db->prepare('UPDATE appel_offre SET answered=1 WHERE id=?');
           $q->execute([$_GET[id]]);
       
-         $_SESSION['offre_answered']='<i class=\"fas fa-check-circle\"></i> Reponse envpyée avec succès.';
+         $_SESSION['offre_answered']='<i class=\"fas fa-check-circle\"></i> Reponse envoyée avec succès.';
          redirect('fournOffersList.php');
      }
  }

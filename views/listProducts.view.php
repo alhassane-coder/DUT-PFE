@@ -48,7 +48,7 @@
             <div class="listinfotable" style="overflow-x:auto;">
             <table style="margin: top 30px;">
                 <tr>
-                    <th>ID</th>
+                    <th>N°</th>
                     <th>Nom</th>
                     <th>Nom de famille</th>
                     <th>Quantité</th>
@@ -59,9 +59,11 @@
                     <th>Action:</th>
 
                 </tr>  
+                <?php $i = 1; ?>
+
             <?php foreach($products as $product) : ?>
                 <tr>
-                    <td><?= $product->idproduit ?></td>
+                    <td><?=  $i++ ?></td>
                     <td><?= $product->nomproduit ?></td>
                     <td><?= $product->nomfamille ?></td>
                     <td><?= $product->qte_produit ?></td>

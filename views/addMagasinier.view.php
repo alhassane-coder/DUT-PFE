@@ -97,7 +97,7 @@
                     
         </main>
     </div>
-<label for="sidebar-toggle" class="body-label"></label> <!-- Connexion Modal -->
+<label for="sidebar-toggle" class="body-label"></label> <!--Produits Modal -->
 	  <div class="Modal-bg">
 	  	 <div class="Modal">
 			  <h4 class="lead">Action:</h4>

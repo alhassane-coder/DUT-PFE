@@ -46,16 +46,17 @@
             <div class="listinfotable" style="overflow-x:auto;">
             <table style="margin: top 30px;">
                 <tr>
-                    <th>ID</th>
+                    <th>N°</th>
                     <th>Nom</th>
                     <th>Prénom</th>
                     <th>Addresse Email</th>
                     <th>Numéro de Téléphone</th>
                     <th>Action:</th>
                 </tr>  
+            <?php $i = 1; ?>
             <?php foreach($magasiniers as $magasinier) : ?>
                 <tr>
-                    <td><?= $magasinier->id ?></td>
+                    <td><?= $i++ ?></td>
                     <td><?= $magasinier->name ?></td>
                     <td><?= $magasinier->firstName ?></td>
                     <td><?= $magasinier->email ?></td>

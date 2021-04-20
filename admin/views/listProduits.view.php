@@ -58,13 +58,11 @@
                     <th>Prix</th>
                     <th>TVA</th>
                     <th>Code QR</th>
-
-
-
                 </tr>  
+                <?php $i = 1; ?>
             <?php foreach($products as $product) : ?>
                 <tr>
-                    <td><?= $product->idproduit ?></td>
+                    <td><?= $i++ ?></td>
                     <td><?= $product->nomproduit ?></td>
                     <td><?= $product->nomfamille ?></td>
                     <td><?= $product->qte_produit ?></td>

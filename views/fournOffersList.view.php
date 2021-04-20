@@ -52,9 +52,10 @@
                     <th>Expiration de l'offre</th>
                     <th>Action:</th>
                 </tr>  
+            <?php $i = 1; ?>
             <?php foreach($offers as $offer) : ?>
                 <tr>
-                    <td><?= $offer->id ?></td>
+                    <td><?= $i++ ?></td>
                     <td><?= $offer->produit ?></td>
                     <td><?= $offer->qte ?></td>
                     <td><?= $offer->description ?></td>
@@ -83,5 +84,14 @@
 </body>
 
 <?php include('partials/_footer.php');?> 
+ <!-- Message d'erreur après suppression du Fournisseur -->
+
+ <?php if(!empty($_SESSION['offre_answered'])):?>
+    <script type="text/javascript">
+         alertify.success("<?= $_SESSION['offre_answered']?> !");
+    </script>
+  <?php endif;?>
+  <?php $_SESSION['offre_answered']='';?>
+
 
 
