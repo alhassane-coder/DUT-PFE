@@ -309,11 +309,31 @@ img{
     border: .5px solid white;
     padding: 2px;
 }
-
+.filter-button{
+    width: 80px;
+    height: 30px;
+    background: blue;
+    color: white;
+    cursor: pointer;
+    border: .5px solid white;
+    padding: 2px;
+    
+}
+.btn-back{
+    position: relative;
+}
+.btn-back form{
+    position: absolute;
+    right: 5px;
+    bottom: 0px;
+    margin-bottom: 0px !important;
+}
 .submit-btn:hover {
     background: blue !important;
 }
-
+.filter-button:hover{
+    background: rgb(0, 174, 255)!important;
+}
 .submit-btn1:hover{
     background: rgb(126, 17, 0) !important;
 }
@@ -412,28 +432,37 @@ td input[type="number"],td input[type="date"]
  padding:5px;
 }
 
+.filter{
+    width:200px;
+    height:35px;
+    border:1px solid silver;
+    border-radius:3px;
+    font-size:17px;
+    padding:5px;
+}
 
 
 @media only screen and (min-width:180px) and (max-width:409px)
 {
-.tb-add
-{
- width:100%;
-}
-.tb-add .column1
-{
- visibility:visible !important;
- display:none;
-}
+    .tb-add
+    {
+    width:100%;
+    }
+    .tb-add .column1
+    {
+    visibility:visible !important;
+    display:none;
+    }
 
-.submit-btn
-{
-position: unset;
-margin-top: 30px !important;
-}
-.infos_back{
-    width: 100% !important;
-}
+    .submit-btn
+    {
+    position: unset;
+    margin-top: 30px !important;
+    }
+    .infos_back{
+        width: 100% !important;
+    }
+   
 
 }
 @media only screen and (max-width:920px){
@@ -445,6 +474,12 @@ margin-top: 30px !important;
 }
 .infos_back{
     width: 100% !important;
+}
+.btn-back{
+    position: unset;
+}
+.btn-back form{
+    position: unset;
 }
 
 }
@@ -478,5 +513,5 @@ h8 {
 }
 
 .qrcode{
-    width: 90px !important;
+    width: 60px !important;
 }

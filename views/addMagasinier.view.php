@@ -5,20 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/c1cf6b23f8.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../assets/css/dashboard.css">
-    <link rel="stylesheet" href="../assets/css/all.css">
-    <link rel="stylesheet" type="text/css" href="../librairies/alertify/css/alertify.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link rel="stylesheet" href="assets/css/all.css">
+    <link rel="stylesheet" type="text/css" href="librairies/alertify/css/alertify.css">
 
 
-    <title>Ajouter des informaticiens</title>
+    <title>Ajouter un Magasinier</title>
 </head>
 <body>
     <input type="checkbox" name="" id="sidebar-toggle">
-     <!-- Sidebar -->
-  
-     <?php require("sidebar.php"); ?>
-  
-     <div class="main-content">
+  <?php include "infosidebar.php"; ?>
+    <div class="main-content">
         <header>
             <div class="menu-toogle">
                 <label for="sidebar-toggle">
@@ -26,24 +23,26 @@
                 </label>
             </div>
             <div class="header-icons">
-                <span><a style="color: red; font-size: 0.9rem;text-decoration:none;"href="../logout.php"><i class="fas fa-sign-out-alt"></i>Se Deconnecter</a></span>
+                <span><a style="color: red; font-size: 0.9rem;text-decoration:none;"href="logout.php"><i class="fas fa-sign-out-alt"></i>Se Deconnecter</a></span>
             </div>     
         </header>
         <main>
             <div class="page-header">
                 <div>
-                    <h1> Profil du directeur </h1>
-                    <small> Ajouter des informaticiens </small>
+                    <h1> Profil de l'administrateur </h1>
+                    <small> Admin de l'application web</small>
+                    <?php include('partials/_flash.php'); ?>
+
                 </div>
                 <div class="header-actions">
                    
                 </div>         
             </div>
             <div class="form-content">
-                <?php include('../partials/_errors.php'); ?>
-                <?php include('../include/scripts.php');?>
+                <?php include('partials/_errors.php'); ?>
+                <?php include('include/scripts.php');?>
                 <form  method="POST" class="infos" data-parsley-validate >
-			        <h4 style="color: rgb(0, 174, 255); margin-bottom: 10px;">Ajouter un informaticien</h4>
+			        <h4 style="color: rgb(0, 174, 255); margin-bottom: 10px;">Ajouter un magasinier</h4>
 
 			        <table class="tb-add" align=center cellspacing=10 >
                             <!--Username Field -->
@@ -90,23 +89,26 @@
                         </tr>            
      
 			        </table>
-			        <input type="submit" class="submit-btn" value="Ajouter" name="add_informaticien">
+			        <input type="submit" class="submit-btn" value="Ajouter" name="add_mag">
 				                      
                   
                 </form>
-           </div>                                  
+           </div>                
+                    
         </main>
     </div>
-<label for="sidebar-toggle" class="body-label"></label>
+<label for="sidebar-toggle" class="body-label"></label> <!-- Connexion Modal -->
+	  <div class="Modal-bg">
+	  	 <div class="Modal">
+			  <h4 class="lead">Action:</h4>
+			  <a href="addProducts.php" class="btn btn-primary "><i class="fas fa-plus"></i> Ajouter un produit</a>
+	       	  <a href="listProducts.php" class="btn btn-primary "><i class="fas fa-list"></i></i> Liste des produits </a>
+			  <span class="modal-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+		</div>	  
+	  </div>
+    <script src="assets/js/app.js"></script>
+
 
 </body>
-<!-- SCRIPTS-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<script src="../librairies/Parsley/parsley.min.js"></script>
-<script src="../librairies/Parsley/i18n/fr.js"></script>
-<script src="../librairies/alertify/alertify.min.js"></script>
 
-
-
-  
+<?php include('partials/_footer.php');?> 

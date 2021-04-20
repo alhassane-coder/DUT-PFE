@@ -39,7 +39,12 @@
                 <div class="header-actions">             
                 </div>         
             </div>
-            
+            <div class="btn-back" style="position:relative;">
+                <form action="" method="POST">
+                    <input class="filter" style="margin-top :20px;" type="text" name="valueToSearch" value="<?= get_input('valueToSearch')?>" placeholder="Rechercher">
+                    <input class="filter-button" type="submit" name="filter" value="Filtrer">
+                </form>
+           </div>
             <?php if(!empty($products)) : ?>
 
             <div class="listinfotable" style="overflow-x:auto;">
@@ -64,7 +69,7 @@
                     <td><?= $product->nomfamille ?></td>
                     <td><?= $product->qte_produit ?></td>
                     <td><?= $product->expire_date ?></td>
-                    <td><?= $product->prix ?></td>
+                    <td><?= $product->prix ?> Dhs</td>
                     <td><?= $product->tva ?></td>
                     <td><img class="qrcode" src="../<?= $product->qrcode ?>" alt="Code qr du produit"> </td>
 

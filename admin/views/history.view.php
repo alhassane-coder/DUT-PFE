@@ -44,14 +44,17 @@
             <div class="listinfotable" style="overflow-x:auto;">
                 <table style="margin: top 30px;">
                     <tr>
-                        <th>ID</th>
+                        <th>N°</th>
                         <th>Evènement</th>
                         <th>Date</th>
                         <th>Action</th>
                     </tr> 
+                
+                <?php $i = 1;?>
+
                 <?php foreach($history as $history) : ?>
                     <tr>
-                        <td><?= $history->idhistorique ?></td>
+                        <td><?= $i++ ?></td>
                         <td><?= $history->evenement ?></td>
                         <td><?= $history->date ?></td>
                         <td>

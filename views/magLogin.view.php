@@ -34,12 +34,8 @@
 
              </div>
 
-           <input type="submit" class="btn btn-primary" value="Connection" name="login">
-           <p>
-             <h5 class="text-center">Vous avez oublié votre mot passe ?
-               <a href="forgot_password" class= "btn btn-warning">Réinitialisez!</a>
-             </h5>
-           </p>
+           <input type="submit" style="margin-bottom: 5px !important;" class="btn btn-primary" value="Connection" name="login">
+      
 
         </form>
 

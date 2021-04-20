@@ -10,11 +10,13 @@
     <link rel="stylesheet" type="text/css" href="librairies/alertify/css/alertify.css">
 
 
-    <title>Modification du profil</title>
+
+
+    <title>Modifer le profil</title>
 </head>
 <body>
     <input type="checkbox" name="" id="sidebar-toggle">
-  <?php include "infosidebar.php"; ?>
+    <?php include "fournsidebar.php"; ?>
     <div class="main-content">
         <header>
             <div class="menu-toogle">
@@ -29,13 +31,13 @@
         <main>
             <div class="page-header">
                 <div>
-                    <h1> Profil de l'administrateur </h1>
-                    <small> Admin de l'application web</small>
+                    <h1> Profil du fournisseur </h1>
+                    <small> Utilisateur de l'application Web </small>
                     <?php include('partials/_flash.php'); ?>
 
                 </div>
                 <div class="header-actions">
-                   
+    
                 </div>         
             </div>
             <div class="form-content">
@@ -49,61 +51,48 @@
 					<th class="hidden_th">Nom d'utilisateur:</th>
 					<tr>
 						<td class="column1">Nom d'utilisateur:</td>
-						<td><input type="text" placeholder="Nom d'utilisateur:"id="name" name="login" value=<?= $informaticien->login ?>  required="required" data-parsley-minlength="3" data-parsley-trigger="change"></td>
+						<td><input type="text" placeholder="Nom d'utilisateur:"id="name" name="login" value=<?= $fourniss_infos->login ?>  required="required" data-parsley-minlength="3" data-parsley-trigger="change"></td>
 					</tr>
 
-                        <!--  Name Field -->
+                        <!--  Name && firstName Field  -->
                                     
 					<th class="hidden_th">Nom:</th>
 					<tr>
 						<td class="column1">Nom:</td>
-						<td><input type="text" placeholder="Nom:"name="name" required="required" value=<?= $informaticien->name ?> data-parsley-minlength="5" data-parsley-trigger="change"></td>
-					</tr>
-          
-					<!--  firstName Field -->
-					<th class="hidden_th">Prénom:</th>
-					<tr>
-						<td class="column1">Prénom:</td>
-						<td><input type="text" placeholder="Prénom:"name="firstName" required="required" value=<?= $informaticien->firstName?>  data-parsley-minlength="5" data-parsley-trigger="change"></td>
+						<td><input type="text" placeholder="Nom:"name="name" required="required" value=<?= $fourniss_infos->name ?> data-parsley-minlength="5" data-parsley-trigger="change"></td>
 					</tr>
 
                     <!-- Email Field -->
 					<th class="hidden_th">Email:</th>
 					<tr>
 						<td class="column1">Email:</td>
-						<td><input type="email" placeholder="Addresse Email:"name="email" value=<?= $informaticien->email?> required="required"   data-parsley-trigger="change"></td>
+						<td><input type="email" placeholder="Addresse Email:"name="email" value=<?= $fourniss_infos->email?> required="required"   data-parsley-trigger="change"></td>
 					</tr>
 
                      <!-- Tel Field -->
 					<th class="hidden_th">Téléphone:</th>
 					<tr>
 						<td class="column1">Téléphone</td>
-						<td><input type="tel" placeholder="Numéro de Téléphone:"name="tel" value=<?= $informaticien->tel?> required="required"  data-parsley-minlength="8" data-parsley-trigger="change"></td>
+						<td><input type="tel" placeholder="Numéro de Téléphone:"name="tel" value=<?= $fourniss_infos->tel?> required="required"  data-parsley-minlength="8" data-parsley-trigger="change"></td>
 					</tr>           
      
 			    </table>
-			    <input type="submit" style="margin-top:10px;" class="submit-btn3" value="Modifier" name="update_informaticien">
+			    <input type="submit" style="margin-top:10px;" class="submit-btn3" value="Modifier" name="update_fournisseur">
 				                      
                   
          </form>
 		
 
-         </div>                
+         </div>       
                     
         </main>
     </div>
-<label for="sidebar-toggle" class="body-label"></label> <!-- Connexion Modal -->
-	  <div class="Modal-bg">
-	  	 <div class="Modal">
-			  <h4 class="lead">Action:</h4>
-			  <a href="addProducts.php" class="btn btn-primary "><i class="fas fa-plus"></i> Ajouter un produit</a>
-	       	  <a href="listProducts.php" class="btn btn-primary "><i class="fas fa-list"></i></i> Liste des produits </a>
-			  <span class="modal-close"><i class="fa fa-times" aria-hidden="true"></i></span>
-		</div>	  
-	  </div>
-    <script src="assets/js/app.js"></script>
-
+<label for="sidebar-toggle" class="body-label"></label>
 
 </body>
 
 <?php include('partials/_footer.php');?> 
+
+
+
+  

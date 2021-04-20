@@ -3,9 +3,9 @@ include "include/functions.php";
 include "config/database.php"; 
 
 if(isset($_GET['id'])){
-    if($_GET['id'] == $_SESSION['fourn_id']){
+    if($_GET['id'] == $_SESSION['mag_id']){
 
-        $fourniss_infos = find_fourniss_by_id($_GET['id']);
+        $mag_infos = find_mag_by_id($_GET['id']);
 
     }else{
       set_flash(" <i class=\"fas fa-exclamation-triangle\"></i>  L'id de l'url est différent de celui de l'utilisateur connecté","warning");
@@ -14,7 +14,7 @@ if(isset($_GET['id'])){
     
 
 }else{
-    redirect("fournProfile.php?id=".get_session('fourn_id'));
+    redirect("magProfile.php?id=".get_session('mag_id'));
 }
 
 
@@ -23,4 +23,4 @@ if(isset($_GET['id'])){
 
 
 
-include 'views/fournProfile.view.php';
+include 'views/magProfile.view.php';

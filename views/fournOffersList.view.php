@@ -12,7 +12,7 @@
 
 
 
-    <title>Fournisseur dashboard</title>
+    <title>Appels d'offres</title>
 </head>
 <body>
     <input type="checkbox" name="" id="sidebar-toggle">
@@ -37,19 +37,41 @@
 
                 </div>
                 <div class="header-actions">
-                    <a class="buton" href="fournEditProfile.php">
-                     <span><i class="fas fa-edit"></i></span>
-                      Modifier mon profil
-                    </a>
+    
                 </div>         
             </div>
-            <div class="infos_back">
-                <div class="form-content">
-                    <h5>Nom et Prénom: <span style="font-size:1em; color:blue"><?= $fourniss_infos->name ?></span></h5><br>
-                    <h5>Email:  <span style="font-size:1em; color:blue"><?= $fourniss_infos->email?></span></h5><br>
-                    <h5>Numéro de Téléphone:  <span style="font-size:1.5em; color:blue"><?= $fourniss_infos->tel ?></span></h5><br>
-                </div>              
-            </div>
+            <?php if(!empty($offers)) : ?>
+
+            <div class="listinfotable" style="overflow-x:auto;">
+            <table style="margin: top 30px;">
+                <tr>
+                    <th>N°</th>
+                    <th>Produit demandé</th>
+                    <th>Quantité</th>
+                    <th>Description:</th>
+                    <th>Expiration de l'offre</th>
+                    <th>Action:</th>
+                </tr>  
+            <?php foreach($offers as $offer) : ?>
+                <tr>
+                    <td><?= $offer->id ?></td>
+                    <td><?= $offer->produit ?></td>
+                    <td><?= $offer->qte ?></td>
+                    <td><?= $offer->description ?></td>
+                    <td><?= $offer->date ?></td>
+
+                    <td>
+                        <a onclick="return confirm('Confirmez-vous la reponse  ?');" class="submit-btn3" href="OfferAnswer.php?id=<?=$offer->id ?>"><i class="fa fa-comments" aria-hidden="true"></i> Repondre</a>
+                    </td>
+                </tr>
+
+            <?php endforeach; ?>
+
+            </table>
+            <?php else: ?>
+                <h8 ><i class="fas fa-exclamation-triangle"></i> Aucun fournisseur pour le moment </h8>
+            <?php endif; ?>
+                        
                     
         </main>
     </div>
@@ -60,26 +82,3 @@
 <?php include('partials/_footer.php');?> 
 
 
-<!-- Message de succès après connection -->
- <?php if(!empty($_SESSION['connected'])):?>
-    <script type="text/javascript">
-         alertify.success('Bienvenue Mr <?= $_SESSION['admin_name'] ?> .');
-    </script>
-  <?php endif;?>
-  <?php $_SESSION['connected']='';?>
-
-<!-- Message de succès après mis à jour du profil -->
-<?php if(!empty($_SESSION['profil_updated'])):?>
-    <script type="text/javascript">
-         alertify.success('<?= $_SESSION['profil_updated'] ?> .');
-    </script>
-  <?php endif;?>
-  <?php $_SESSION['profil_updated']='';?>
-  
-<!-- Message de succès après mis à jour du mot de passe -->
-<?php if(!empty($_SESSION['password_updated'])):?>
-    <script type="text/javascript">
-         alertify.success('<?= $_SESSION['password_updated'] ?> .');
-    </script>
-  <?php endif;?>
-  <?php $_SESSION['password_updated']='';?>

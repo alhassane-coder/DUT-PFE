@@ -7,8 +7,6 @@
     <script src="https://kit.fontawesome.com/c1cf6b23f8.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/dashboard.css">
     <link rel="stylesheet" href="assets/css/all.css">
-    <link rel="stylesheet" type="text/css" href="librairies/alertify/css/alertify.css">
-
 
 
 
@@ -16,7 +14,41 @@
 </head>
 <body>
     <input type="checkbox" name="" id="sidebar-toggle">
-    <?php include "fournsidebar.php"; ?>
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-flex">
+              
+              <div class="brand-icons">
+                 <span ><a href="magProfile.php"><i class="fas fa-user"></i></a></span>            
+              </div>
+            </div>
+        
+        </div>
+        <div class="sidebar-main">
+            <div class="sidebar-user">
+                <img src="assets/img/mag.jpeg" alt="">
+                <div>
+                  <h3> <?= $mag_infos->name?></h3>
+                  <span> <?= $mag_infos->email ?> </span>
+                </div>
+            </div>
+            <div class="sidebar-menu">
+                    <div class="menu-head">
+                        <span>Tableau de bord</span>                   
+                    </div>
+                    <ul>
+                        <li>
+                             <a href="magListProducts.php">
+                                <span><i class="fas fa-list"></i> </span>
+                                Liste des produits
+                             </a>
+                        </li>
+                    </ul>
+            </div>
+
+        </div>
+    
+    </div>
     <div class="main-content">
         <header>
             <div class="menu-toogle">
@@ -31,23 +63,20 @@
         <main>
             <div class="page-header">
                 <div>
-                    <h1> Profil du fournisseur </h1>
-                    <small> Utilisateur de l'application Web </small>
+                    <h1> Profil du magasinier </h1>
+                    <small> Simple Utilisateur de l'application Web </small>
                     <?php include('partials/_flash.php'); ?>
 
                 </div>
                 <div class="header-actions">
-                    <a class="buton" href="fournEditProfile.php">
-                     <span><i class="fas fa-edit"></i></span>
-                      Modifier mon profil
-                    </a>
+                   
                 </div>         
             </div>
             <div class="infos_back">
                 <div class="form-content">
-                    <h5>Nom et Prénom: <span style="font-size:1em; color:blue"><?= $fourniss_infos->name ?></span></h5><br>
-                    <h5>Email:  <span style="font-size:1em; color:blue"><?= $fourniss_infos->email?></span></h5><br>
-                    <h5>Numéro de Téléphone:  <span style="font-size:1.5em; color:blue"><?= $fourniss_infos->tel ?></span></h5><br>
+                    <h5>Nom et Prénom: <span style="font-size:1em; color:blue"><?= $mag_infos->name ?></span></h5><br>
+                    <h5>Email:  <span style="font-size:1em; color:blue"><?= $mag_infos->email?></span></h5><br>
+                    <h5>Numéro de Téléphone:  <span style="font-size:1.5em; color:blue"><?= $mag_infos->tel ?></span></h5><br>
                 </div>              
             </div>
                     
@@ -68,18 +97,5 @@
   <?php endif;?>
   <?php $_SESSION['connected']='';?>
 
-<!-- Message de succès après mis à jour du profil -->
-<?php if(!empty($_SESSION['profil_updated'])):?>
-    <script type="text/javascript">
-         alertify.success('<?= $_SESSION['profil_updated'] ?> .');
-    </script>
-  <?php endif;?>
-  <?php $_SESSION['profil_updated']='';?>
+
   
-<!-- Message de succès après mis à jour du mot de passe -->
-<?php if(!empty($_SESSION['password_updated'])):?>
-    <script type="text/javascript">
-         alertify.success('<?= $_SESSION['password_updated'] ?> .');
-    </script>
-  <?php endif;?>
-  <?php $_SESSION['password_updated']='';?>

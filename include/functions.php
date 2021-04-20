@@ -210,7 +210,7 @@ if(!function_exists('find_fourniss_by_id')){
 
 		global $db;
 
-		$q=$db->prepare("SELECT name,email,tel FROM fournisseurs WHERE id=? ");
+		$q=$db->prepare("SELECT login,name,email,tel FROM fournisseurs WHERE id=? ");
 
 		$q->execute([$id]);
 
@@ -244,4 +244,41 @@ if(!function_exists('find_infos_by_id')){
 
     }
 
+ }
+
+  // Rechercher toutes les données du magasinier avec son id;
+
+  if(!function_exists('find_mag_by_id')){
+
+	function find_mag_by_id($id){
+
+		global $db;
+
+		$q=$db->prepare("SELECT name,email,tel FROM magasinier WHERE id=? ");
+
+		$q->execute([$id]);
+
+        $data =$q->fetch(PDO::FETCH_OBJ);
+
+        $q->closeCursor();
+
+        return $data;
+
+    }
+
+ }
+
+
+
+ // Selectionner la liste des produits en fonction de la requete entréée en paramètre
+ if(!function_exists('filterTable')){
+	function filterTable($query){
+		global $db;
+		$q=$db->query($query);
+	
+		$products = $q->fetchAll(PDO::FETCH_OBJ);
+		
+		return $products;
+	}
+	
  }

@@ -43,7 +43,7 @@ if(isset($_POST['add_product'])){
                             'tva'=>$tva
                 	  ));
 					 
-					  $id = $db->lastInsertId();
+					  	$id = $db->lastInsertId();
 
 					 // On utilise la libraie phpqrcode pour générer nos codes QR
 						require_once('librairies/phpqrcode/qrlib.php');
@@ -60,7 +60,7 @@ if(isset($_POST['add_product'])){
 						if($file){chmod($file,0777);}
 
 						//Le contenu de notre  code sera le lien vers le produit
-						$data='http://pfe.rtest.local/Pfe/productView.phpid=1';
+						$data='http://pfe.rtest.local/Pfe/productView.php?id='.$id;
 
 						//On génère enfin le code
 						QRcode::png($data,$file,2,2);

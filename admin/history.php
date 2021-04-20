@@ -10,7 +10,7 @@ $admin_infos=find_admin_by_id();
 //On selectionne l'historique
 
 
-$q=$db->query("SELECT idhistorique,evenement,date FROM historique");
+$q=$db->query("SELECT idhistorique,evenement,date FROM historique ORDER BY idhistorique DESC");
 
 $history = $q->fetchAll(PDO::FETCH_OBJ);
 

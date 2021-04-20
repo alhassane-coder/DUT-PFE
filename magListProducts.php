@@ -2,8 +2,7 @@
 include "include/functions.php"; 
 include "config/database.php"; 
 
-$informaticien = find_infos_by_id(get_session('info_id'));
-
+$mag_infos = find_mag_by_id(get_session('mag_id'));
 // On selectionne la liste des produits 
 
 // Si la liste a été filtrée
@@ -21,6 +20,7 @@ if(isset($_POST['filter']) && !empty($_POST['valueToSearch'])){
    
        $products = filterTable($query);
        save_input_data();
+
     }
 
-include "views/listProducts.view.php"; 
+include "views/magListProducts.view.php"; 

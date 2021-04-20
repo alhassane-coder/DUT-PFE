@@ -27,6 +27,12 @@
                                 Liste des fournisseurs
                              </a>
                         </li>
+                        <li>
+                             <a href="listMagasinier.php">
+                                <span><i class="fas fa-list"></i> </span>
+                                Liste des magasiniers
+                             </a>
+                        </li>
                     </ul>
                     <div class="menu-head">
                         <span>Gestion</span>                   
@@ -44,7 +50,12 @@
                                 Faire un appel d'offre
                              </a>
                         </li>
-                        
+                        <li>
+                             <a href="addMagasinier.php">
+                                <span><i class="fas fa-user-plus"></i> </span>
+                               Ajouter un magasinier
+                             </a>
+                        </li>                      
                         <li>
                              <a href="infoEditPassword.php">
                                 <span><i class="far fa-edit"></i> </span>
