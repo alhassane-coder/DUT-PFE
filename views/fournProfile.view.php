@@ -63,10 +63,11 @@
 <!-- Message de succès après connection -->
  <?php if(!empty($_SESSION['connected'])):?>
     <script type="text/javascript">
-         alertify.success('Bienvenue Mr <?= $_SESSION['admin_name'] ?> .');
+         alertify.success('<?= $_SESSION['connected'] ?>');
     </script>
   <?php endif;?>
   <?php $_SESSION['connected']='';?>
+
 
 <!-- Message de succès après mis à jour du profil -->
 <?php if(!empty($_SESSION['profil_updated'])):?>
@@ -83,3 +84,11 @@
     </script>
   <?php endif;?>
   <?php $_SESSION['password_updated']='';?>
+
+  <!-- Message de succès après ajout de nouveautés -->
+<?php if(!empty($_SESSION['news_added'])):?>
+    <script type="text/javascript">
+         alertify.success('<?= $_SESSION['news_added'] ?> .');
+    </script>
+  <?php endif;?>
+  <?php $_SESSION['news_added']='';?>

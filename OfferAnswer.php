@@ -47,7 +47,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
  }
 
 }else{
-    redirect('fournOfferList.php');
+    redirect('fournOffersList.php');
 }
 
 ?>

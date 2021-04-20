@@ -22,7 +22,7 @@
                     </div>
                     <ul>
                         <li>
-                             <a href="">
+                             <a href="addNews.php">
                                 <span><i class="fas fa-plus"></i></span>
                                 Postuler des nouveautés
                              </a>
