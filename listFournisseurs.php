@@ -11,4 +11,4 @@ $q=$db->query("SELECT id,name,email,tel FROM fournisseurs where active=1");
 
 $fournisseurs = $q->fetchAll(PDO::FETCH_OBJ);
 
-include "views/listFournisseur.view.php"; 
+include "views/listFournisseur.view.php";
