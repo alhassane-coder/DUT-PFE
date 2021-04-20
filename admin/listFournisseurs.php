@@ -2,6 +2,8 @@
 session_start();
 include "../include/functions.php"; 
 include "../config/database.php"; 
+include('filters/admin_filter.php');
+
 //include('filters/guest_filter.php');
 
  //on selectionne les infos du super administrateur

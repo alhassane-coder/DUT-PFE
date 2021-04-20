@@ -2,6 +2,11 @@
 include "include/functions.php"; 
 include "config/database.php"; 
 
+if(!isset($_SESSION['mag_login'])){
+    set_flash("Attention,contenu reservée aux magasiniers!");
+    redirect('magLogin.php');
+}
+
 $mag_infos = find_mag_by_id(get_session('mag_id'));
 // On selectionne la liste des produits 
 

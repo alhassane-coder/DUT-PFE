@@ -31,6 +31,17 @@ if(isset($_POST['login']))
             $_SESSION['mag_id']= $magasinier->id;
             $_SESSION['mag_login']= $magasinier->login;
             $_SESSION['mag_email']= $magasinier->email;
+            setlocale(LC_TIME, ['fr', 'fra', 'fr_FR']);
+            $date=strftime('%A %d %B %Y').' à '.date('h:i:s');
+            
+            // On enregistre l'évènement en base de donnée
+            $q=$db->prepare('INSERT INTO historique(evenement,date) VALUES (:event,:date) ');
+            $event='Le magasinier <span style="color:blue">'.$magasinier->login.'</span> a accedé au stock';
+            $q->execute(array(
+            'event'=>$event,
+            'date'=>$date
+            ));
+
 
             redirect_friendly('magProfile.php?id='.$magasinier->id);
 

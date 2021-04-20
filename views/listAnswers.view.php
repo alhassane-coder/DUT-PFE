@@ -90,7 +90,7 @@
                 <th>Produit disponible </th>
                 <th>Quantité disponible</th>
                 <th>Description de la nouveauté</th>
-                <th>date</th>
+                <th>Date d'expiration</th>
                 <th>Action:</th>
             </tr>  
             <?php $i = 1 ?> 

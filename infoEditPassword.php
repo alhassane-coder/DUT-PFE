@@ -2,7 +2,7 @@
 session_start();
 include "include/functions.php"; 
 include "config/database.php"; 
-//include('filters/auth_filter.php');
+include('filters/info_auth_filter.php');
 
  //on selectionne les infos de l'informaticien
  $informaticien = find_infos_by_id(get_session('info_id'));

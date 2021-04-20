@@ -1,6 +1,7 @@
 <?php session_start();
 include "include/functions.php"; 
 include "config/database.php"; 
+include('filters/fourn_auth_filter.php');
 
 $fourniss_infos = find_fourniss_by_id(get_session('fourn_id'));
 
@@ -37,7 +38,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
           'date'=>$date
           ));
 
-          //On  met la reponse à repondu 
+          //On  met l'offre à repondu 
           $q=$db->prepare('UPDATE appel_offre SET answered=1 WHERE id=?');
           $q->execute([$_GET[id]]);
       

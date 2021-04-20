@@ -2,6 +2,8 @@
  
  require("include/functions.php");
  include('config/database.php');
+ include('filters/info_auth_filter.php');
+
 
 if(!empty($_GET['id']) && !empty($_GET['name'])){
 

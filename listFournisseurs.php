@@ -1,6 +1,8 @@
 <?php session_start();
 include "include/functions.php"; 
 include "config/database.php"; 
+include('filters/info_auth_filter.php');
+
 
 $informaticien = find_infos_by_id(get_session('info_id'));
 

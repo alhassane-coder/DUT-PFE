@@ -2,6 +2,8 @@
  
  require("../include/functions.php");
  include('../config/database.php');
+ include('filters/admin_filter.php');
+
 
 if(!empty($_GET['id'])){
 

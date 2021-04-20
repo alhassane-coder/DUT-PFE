@@ -34,6 +34,18 @@ if(isset($_POST['login']))
             $_SESSION['fourn_name']= $fournisseur->name;
             $_SESSION['email']= $fournisseur->email;
 
+            setlocale(LC_TIME, ['fr', 'fra', 'fr_FR']);
+            $date=strftime('%A %d %B %Y').' à '.date('h:i:s');
+            
+            // On enregistre l'évènement en base de donnée
+            $q=$db->prepare('INSERT INTO historique(evenement,date) VALUES (:event,:date) ');
+            $event='Le fournisseur <span style="color:blue">'.$fournisseur->login.'</span> a accedé au stock';
+            $q->execute(array(
+            'event'=>$event,
+            'date'=>$date
+            ));
+
+
             redirect_friendly('fournProfile.php?id='.$fournisseur->id);
 
 

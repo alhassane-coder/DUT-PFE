@@ -41,7 +41,8 @@
 
                 </div>
                 <div class="header-actions">
-                  
+                 <?php include "../partials/_flash.php" ?>
+
                 </div>         
             </div>
             <div class="infos_back">
