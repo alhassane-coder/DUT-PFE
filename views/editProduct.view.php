@@ -90,7 +90,7 @@
 					</tr>            
      
 			    </table>
-			    <input type="submit" style="margin-top:10px;" class="submit-btn" value="Modifer" name="add_product">
+			    <input type="submit" style="margin-top:10px;" class="submit-btn" value="Modifer" name="edit_product">
 				                      
                   
                 </form>

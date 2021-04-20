@@ -12,7 +12,7 @@
 
 
 
-    <title>Appels d'offres</title>
+    <title>Fournisseur dashboard</title>
 </head>
 <body>
     <input type="checkbox" name="" id="sidebar-toggle">
@@ -37,45 +37,25 @@
 
                 </div>
                 <div class="header-actions">
-    
+                   
                 </div>         
             </div>
-            <?php if(!empty($offers)) : ?>
-
-            <div class="listinfotable" style="overflow-x:auto;">
-            <table style="margin: top 30px;">
-                <tr>
-                    <th>N°</th>
-                    <th>Produit demandé</th>
-                    <th>Quantité</th>
-                    <th>Description:</th>
-                    <th>Expiration de l'offre</th>
-                    <th>Action:</th>
-                </tr>  
-            <?php foreach($offers as $offer) : ?>
-                <tr>
-                    <td><?= $offer->id ?></td>
-                    <td><?= $offer->produit ?></td>
-                    <td><?= $offer->qte ?></td>
-                    <td><?= $offer->description ?></td>
-                    <td><?= $offer->date ?></td>
-                    <td>
-                    <?php if(empty($offer->answer) && $offer->answered == 0) :?>
-                        <a onclick="return confirm('Confirmez-vous la reponse  ?');" class="submit-btn3" href="OfferAnswer.php?id=<?=$offer->id ?>"><i class="fa fa-comments" aria-hidden="true"></i> Repondre</a>
-                    <?php else: ?>
-                       <span>Déja Repondu <i class="fas fa-check-circle"></i></span>
-                    <?php endif;?>
-                    </td>
-                </tr>
-
-            <?php endforeach; ?>
-
-            </table>
+            <?php if(!empty($offer)) :?>
+            <div class="infos_back">
+            <center style="color:green;"><b><p>Vous repondez à l'offre N°<?= $offer->id?>:</p></b></center><br>
+                <div class="form-content">
+                    <h5>Produit souhaité par le magasin : <span style="font-size:1em; color:blue"><?= $offer->produit ?></span></h5><br>
+                    <h5>Quantité demandée:  <span style="font-size:1em; color:blue"><?= $offer->qte?></span></h5><br>
+                    <h5>Cette offre expirera Le:  <span style="font-size:1.5em; color:blue"><?= $offer->date ?></span></h5><br>
+                    <form action="" method="POST">
+                        <textarea  name="answer" id="" cols="35" rows="5" placeholder="Votre réponse ici: ................."></textarea><br>
+                        <input type="submit" style="margin-top:10px;" class="submit-btn3" value="Repondre">
+                    </form>
+                </div>              
+            </div>
             <?php else: ?>
-                <h8 ><i class="fas fa-exclamation-triangle"></i> Aucun fournisseur pour le moment </h8>
-            <?php endif; ?>
-                        
-                    
+            <p style="color:red">Url de l'offre invalide</p>
+            <?php endif ?>      
         </main>
     </div>
 <label for="sidebar-toggle" class="body-label"></label>
@@ -84,4 +64,11 @@
 
 <?php include('partials/_footer.php');?> 
 
+ <!-- Message d'erreur après suppression du Fournisseur -->
 
+ <?php if(!empty($_SESSION['offre_answered'])):?>
+    <script type="text/javascript">
+         alertify.success("<?= $_SESSION['offre_answered']?> !");
+    </script>
+  <?php endif;?>
+  <?php $_SESSION['offre_answered']='';?>

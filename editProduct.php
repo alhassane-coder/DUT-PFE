@@ -15,12 +15,18 @@ include "config/database.php";
 
 		// On selectionne les infos du produits à l'url 
 		$q=$db->prepare("SELECT * FROM produits where idproduit=?");
-		$q->execute([$_GET['id']]);
+		$product=$q->execute([$_GET['id']]);
 		$product = $q->fetch(PDO::FETCH_OBJ);
+		if(empty($product)){
+			$_SESSION['url_error']='error';
+			redirect('listProducts.php');
+
+		}
+			
 			
 
 //Si le formulaie a été soumis ;
-if(isset($_POST['add_product'])){
+if(isset($_POST['edit_product'])){
 
 		if(not_empty(['productname','familyname','qte','expire_date','price','tva']) ){
 

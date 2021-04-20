@@ -12,7 +12,7 @@ if(isset($_POST['login']))
 
         extract($_POST);
 
-        $q=$db->prepare("SELECT id,login,email,password as hashed_password FROM fournisseurs WHERE
+        $q=$db->prepare("SELECT id,name,login,email,password as hashed_password FROM fournisseurs WHERE
          (login = :credentials or email = :credentials)
          and active='1'");
 
@@ -31,6 +31,7 @@ if(isset($_POST['login']))
             $_SESSION['connected']="Bienvenue $fournisseur->login , Vous êtes connecté avec succès <i class=\"fas fa-check-circle\"></i>.<br> Profitez-en ☺!";
             $_SESSION['fourn_id']= $fournisseur->id;
             $_SESSION['fourn_login']= $fournisseur->login;
+            $_SESSION['fourn_name']= $fournisseur->name;
             $_SESSION['email']= $fournisseur->email;
 
             redirect_friendly('fournProfile.php?id='.$fournisseur->id);
