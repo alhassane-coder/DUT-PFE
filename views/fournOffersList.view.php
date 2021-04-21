@@ -62,9 +62,9 @@
                     <td><?= $offer->date ?></td>
                     <td>
                     <?php if(empty($offer->answer) && $offer->answered == 0) :?>
-                        <a onclick="return confirm('Confirmez-vous la reponse  ?');" class="submit-btn3" href="OfferAnswer.php?id=<?=$offer->id ?>"><i class="fa fa-comments" aria-hidden="true"></i> Repondre</a>
+                        <a title="Repondre" onclick="return confirm('Confirmez-vous la reponse  ?');" class="submit-btn3" href="OfferAnswer.php?id=<?=$offer->id ?>"><i style="font-size: 20px;" class="fa fa-comments" aria-hidden="true"></i></a>
                     <?php else: ?>
-                       <span>Déja Repondu <i class="fas fa-check-circle"></i></span>
+                       <span> <i style="color:green" class="fas fa-check-circle"></i></span>
                     <?php endif;?>
                     </td>
                 </tr>

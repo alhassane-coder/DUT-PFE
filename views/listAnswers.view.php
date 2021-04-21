@@ -66,7 +66,7 @@
                 <td><?= $answer->qte ?></td>
                 <td><?= $answer->date ?></td>
                 <td>
-                    <a onclick="return confirm('Confirmez-vous la suppression ?');" class="submit-btn1" href="delAnswers.php?id=<?=$answer->id ?>"><i class="fa fa-trash" aria-hidden="true"></i> Supprimer</a>
+                    <a title="Supprimer la reponse"onclick="return confirm('Confirmez-vous la suppression ?');" class="submit-btn1" href="delAnswers.php?id=<?=$answer->id ?>"><i style="font-size:18px;" class="fa fa-trash" aria-hidden="true"></i> </a>
                 </td>
             </tr>
 
@@ -103,7 +103,7 @@
                 <td><?= $new->description ?></td>
                 <td><?= $new->date ?></td>
                 <td>
-                    <a onclick="return confirm('Confirmez-vous la suppression ?');" class="submit-btn1" href="delAnswers.php?id=<?=$answer->id ?>"><i class="fa fa-trash" aria-hidden="true"></i> Supprimer</a>
+                    <a title="Supprimer la nouveauté" onclick="return confirm('Confirmez-vous la suppression ?');" class="submit-btn1" href="delAnswers.php?id=<?=$answer->id ?>"><i style="font-size: 18px;" class="fa fa-trash" aria-hidden="true"></i></a>
                 </td>
             </tr>
 

@@ -62,7 +62,7 @@
                     <td><?= $magasinier->email ?></td>
                     <td><?= $magasinier->tel ?></td>
                     <td>
-                        <a onclick="return confirm('Voulez vous vraiment supprimer ce magasinier ?');" class="submit-btn1" href="delMagasinier.php?id=<?=$magasinier->id ?>&name=<?=$magasinier->name ?>"><i class="fas fa-trash-alt"></i> Supprimer</a>
+                        <a title="Supprimer le magasinier" onclick="return confirm('Voulez vous vraiment supprimer ce magasinier ?');" class="submit-btn1" href="delMagasinier.php?id=<?=$magasinier->id ?>&name=<?=$magasinier->name ?>"><i style="font-size: 18px;" class="fas fa-trash-alt"></i> </a>
                 </td>
                 </tr>
 
