@@ -5,7 +5,7 @@
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'stock');
 define('DB_USERNAME', 'pfe');
-define('DB_PASSWORD', 'ordinateur49');
+define('DB_PASSWORD', 'Password');
 define('DB_CHARSET', 'utf8mb4');
 
 
