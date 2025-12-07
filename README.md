@@ -23,10 +23,5 @@ Structure importante du dépôt
 - assets/ — CSS, JS, images
 - qrcodes/ — génération/stockage QR si utilisé
 
-Utilisation rapide
-- Connectez-vous avec un compte administrateur ou créez un compte si l'inscription est activée.
-- Ajoutez des produits via le formulaire "Nouveau produit".
-- Enregistrez les entrées et sorties depuis la section correspondante pour tenir à jour les quantités.
-- Consultez l'historique pour suivre les mouvements et filtrer par période.
 
 - Auteur : Alhassane (alhassane-coder) — Projet réalisé pour le DUT Télécoms & Réseaux.
