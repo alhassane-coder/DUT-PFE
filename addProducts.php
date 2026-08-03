@@ -60,7 +60,7 @@ if(isset($_POST['add_product'])){
 						if($file){chmod($file,0777);}
 
 						//Le contenu de notre  code sera le lien vers le produit
-						$data='http://pfe.rtest.local/Pfe/productView.php?id='.$id;
+						$data=SITE_URL.'/productView.php?id='.$id;
 
 						//On génère enfin le code
 						QRcode::png($data,$file,2,2);
@@ -71,7 +71,7 @@ if(isset($_POST['add_product'])){
 						if($success && $qr){
 						//On génère la date et l'heure
 						setlocale(LC_TIME, ['fr', 'fra', 'fr_FR']);
-						$date=strftime('%A %d %B %Y').' à '.date('h:i:s');
+						$date=french_date();
 						
 						// On enregistre l'évènement en base de donnée
 						$q=$db->prepare('INSERT INTO historique(evenement,date) VALUES (:event,:date) ');

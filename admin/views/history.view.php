@@ -58,7 +58,7 @@
                         <td><?= $history->evenement ?></td>
                         <td><?= $history->date ?></td>
                         <td>
-                            <a style="text-align:justify;" onclick="return confirm('Voulez vous vraiment supprimer cet historique ?');" class="submit-btn1" href="delHistory.php?id=<?=$history->idhistorique ?>"><i class="fas fa-trash-alt"></i> Supprimer</a>
+                            <a style="text-align:justify;" onclick="return confirm('Voulez vous vraiment supprimer cet historique ?');" class="submit-btn1" href="delHistory.php?id=<?=$history->idhistorique ?>"><i class="fas fa-trash-alt"></i></a>
                         </td>
 
                     </tr>

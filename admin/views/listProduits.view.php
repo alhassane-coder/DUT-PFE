@@ -76,7 +76,7 @@
             <?php endforeach; ?>
 
             </table><br><br>
-            <a style="margin-top: 20px;padding: 2px;" onclick="return confirm('Confirmez-vous l\'impression ?');" target="_blank" class="submit-btn4" href="../printProduct.php"><i class="fa fa-print" aria-hidden="true"></i> Imprimer</a>
+            <a style="margin-top: 20px;padding: 2px;" onclick="return confirm('Confirmez-vous l\'impression ?');" target="_blank" class="submit-btn4" href="../printProduct.php"><i class="fa fa-print" aria-hidden="true"></i></a>
 
             <?php else: ?>
                 <h8 ><i class="fas fa-exclamation-triangle"></i> Aucun produit pour le moment </h8>

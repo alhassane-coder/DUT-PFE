@@ -28,7 +28,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
      if($success){
           //On génère la date et l'heure
           setlocale(LC_TIME, ['fr', 'fra', 'fr_FR']);
-          $date=strftime('%A %d %B %Y').' à '.date('h:i:s');
+          $date=french_date();
           $event='Le fournisseur <span style="color:blue">'.$fourniss_infos->name.'</span> a repondu l\'appel d\'offre pour <span style="color:red">'.$offer->qte.'</span> unités du produit <span style="color:blue">'.$offer->produit;
 
           // On enregistre l'évènement en base de donnée

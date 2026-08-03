@@ -35,7 +35,7 @@ if(isset($_POST['login']))
             $_SESSION['email']= $fournisseur->email;
 
             setlocale(LC_TIME, ['fr', 'fra', 'fr_FR']);
-            $date=strftime('%A %d %B %Y').' à '.date('h:i:s');
+            $date=french_date();
             
             // On enregistre l'évènement en base de donnée
             $q=$db->prepare('INSERT INTO historique(evenement,date) VALUES (:event,:date) ');

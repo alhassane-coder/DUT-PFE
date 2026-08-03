@@ -1,12 +1,16 @@
 <?php
 
-//Database crédentials 
+//Database credentials 
+//InfinityFree - base "if0_42569797_stock"
 
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'stock');
-define('DB_USERNAME', 'pfe');
-define('DB_PASSWORD', 'Password');
+define('DB_HOST', 'sql204.infinityfree.com');
+define('DB_NAME', 'if0_42569797_stock');
+define('DB_USERNAME', 'if0_42569797');
+define('DB_PASSWORD', 'QhN0MknQtqlY7OY');
 define('DB_CHARSET', 'utf8mb4');
+
+// URL publique du site (sans slash final)
+define('SITE_URL', 'https://dutpfe.freehosting.dev');
 
 
 try

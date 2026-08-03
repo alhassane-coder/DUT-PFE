@@ -64,9 +64,9 @@
                   <td>
                       <a title="Supprimer l'informaticien" style="text-align:justify;" onclick="return confirm('Voulez vous vraiment supprimer cet informaticien ?');" class="submit-btn1" href="delInformaticien.php?id=<?=$informaticien->id ?>&name=<?=$informaticien->login ?>"><i style="font-size:18px;" class="fas fa-trash-alt"></i> </a><br><br>
                      <?php if($informaticien->active == 1) : ?>
-                      <a title="Bloquer l'informaticien" style="text-align:justify;" onclick="return confirm('Voulez vous vraiment bloquer cet informaticien ?');" class="submit-btn2" href="blockInformaticien.php?id=<?=$informaticien->id ?>&name=<?=$informaticien->login ?>"><i style="font-size:18px;" class="fas fa-stop-circle"></i> Bloquer</a>
+                      <a title="Bloquer l'informaticien" style="text-align:justify;" onclick="return confirm('Voulez vous vraiment bloquer cet informaticien ?');" class="submit-btn2" href="blockInformaticien.php?id=<?=$informaticien->id ?>&name=<?=$informaticien->login ?>"><i style="font-size:18px;" class="fas fa-stop-circle"></i></a>
                       <?php else: ?>
-                      <a title="Debloqueer l'informaticien" style="text-align:justify;" onclick="return confirm('Voulez vous vraiment débloquer cet informaticien ?');" class="submit-btn3" href="deblockInformaticien.php?id=<?=$informaticien->id ?>&name=<?=$informaticien->login ?>"><i style="font-size:18px;" class="fas fa-check-circle"></i> Debloquer</a>
+                      <a title="Debloqueer l'informaticien" style="text-align:justify;" onclick="return confirm('Voulez vous vraiment débloquer cet informaticien ?');" class="submit-btn3" href="deblockInformaticien.php?id=<?=$informaticien->id ?>&name=<?=$informaticien->login ?>"><i style="font-size:18px;" class="fas fa-check-circle"></i></a>
                       <?php endif; ?>
                 </td>
 

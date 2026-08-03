@@ -39,7 +39,7 @@ include('filters/info_auth_filter.php');
                 if($success){
                          //On génère la date et l'heure
                         setlocale(LC_TIME, ['fr', 'fra', 'fr_FR']);
-						$date=strftime('%A %d %B %Y').' à '.date('h:i:s');
+						$date=french_date();
                         $event='L\'informaticien <span style="color:blue">'.$informaticien->name.' '.$informaticien->firstName.'</span> a fait un appel d\'offre pour <span style="color:red">'.$qte.'</span> unités du produit <span style="color:blue">'.$productname;
 
 						// On enregistre l'évènement en base de donnée

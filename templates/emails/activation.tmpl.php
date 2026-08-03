@@ -56,7 +56,7 @@
 	      Pour activer votre compte veuiller cliquer sur le bouton ci-dessous!<br>
 	      Et connecter-vous ensuite avec votre email ou votre pseudo et le mot de passe que vous avez choisi.
        </p>
-	    <a class="btn" href="<?='localhost/Pfe/activation.php?user='.base64_encode($login).'&token='.$token ?>">Activer mon compte</a>
+	    <a class="btn" href="<?=SITE_URL.'/activation.php?user='.base64_encode($login).'&token='.$token ?>">Activer mon compte</a>
 	</div>
     <div class="page-footer"> 
 

@@ -270,6 +270,17 @@ if(!function_exists('find_infos_by_id')){
 
 
 
+ // Génère une date au format français (remplace strftime, supprimé en PHP 8.1)
+ if(!function_exists('french_date')){
+
+ 	function french_date(){
+ 		$jours = array('dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi');
+ 		$mois = array(1=>'janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre');
+ 		return $jours[(int)date('w')].' '.date('d').' '.$mois[(int)date('n')].' '.date('Y').' à '.date('h:i:s');
+ 	}
+
+ }
+
  // Selectionner la liste des produits en fonction de la requete entréée en paramètre
  if(!function_exists('filterTable')){
 	function filterTable($query){

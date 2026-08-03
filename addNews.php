@@ -44,7 +44,7 @@ include('filters/fourn_auth_filter.php');
                 if($success){
                          //On génère la date et l'heure
                         setlocale(LC_TIME, ['fr', 'fra', 'fr_FR']);
-						$date=strftime('%A %d %B %Y').' à '.date('h:i:s');
+						$date=french_date();
                         $event='Le fournisseur <span style="color:blue">'.$fourniss_infos->name.'</span> a ajouté de la nouveauté dont <span style="color:red">'.$qte.'</span> unités du produit <span style="color:blue">'.$productname;
 
 						// On enregistre l'évènement en base de donnée
