@@ -1,3 +1,9 @@
+<?php
+$page = basename($_SERVER['PHP_SELF']);
+$isHome = ($page === 'index.php');
+$isRegister = ($page === 'register.php');
+$isLogin = in_array($page, ['adminLogin.php', 'supadminLogin.php', 'fournissLogin.php', 'magLogin.php'], true);
+?>
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -12,19 +18,19 @@
           <div id="myNavbar" class="collapse navbar-collapse">
 
               <ul class="nav navbar-nav navbar-right ">
-                  
-                  <li class="active"><a href="index.php"><span style="font-size: 15px; color: #cf6000;">
+
+                  <li class="<?= $isHome ? 'active' : '' ?>"><a href="index.php"><span style="font-size: 15px; color: #cf6000;">
                       <i class="fas fa-home"></i></span>Accueil</a>
                   </li>
-                  <li class=""><a href="register.php"></span>
+                  <li class="<?= $isRegister ? 'active' : '' ?>"><a href="register.php">
                           <span style="font-size: 15px; color: #cf6000;"><i class="fas fa-user-plus"></i></span>Inscription</a>
                    </li>
 
-                    <li><a class="Modal-btn1"><span class=""></span>
+                    <li class="<?= $isLogin ? 'active' : '' ?>"><a class="Modal-btn1"><span class=""></span>
                           <span style="font-size: 15px; color: #cf6000; cursor:pointer;"><i class="fas fa-sign-in-alt"></i></span>Se connecter</a>
                     </li>
 
-              </ul>            
+              </ul>
           </div>
       </div>
 </nav>
